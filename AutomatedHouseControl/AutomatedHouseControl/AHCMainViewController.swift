@@ -8,7 +8,33 @@
 import UIKit
 
 class AHCMainViewController: UIViewController {
-
+    
+    @IBOutlet weak var areaAGeneralButton: UIButton!
+    @IBOutlet weak var areaAGeneralTitleLabel: UILabel!
+    
+    @IBOutlet weak var areaBGeneralButton: UIButton!
+    @IBOutlet weak var areaBGeneralTitleLabel: UILabel!
+    
+    @IBOutlet weak var areaCGeneralButton: UIButton!
+    @IBOutlet weak var areaCGeneralTitleLabel: UILabel!
+    
+    @IBOutlet weak var allAreasGeneralButton: UIButton!
+    
+    @IBOutlet weak var areaA1TVOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaA1TVTitleLabel: UILabel!
+    @IBOutlet weak var areaA1TVChooseChanelPickerView: UIPickerView!
+    @IBOutlet weak var areaA1TVChooseChanelTitleLabel: UILabel!
+    @IBOutlet weak var areaA1TVVolumeTitleLabel: UILabel!
+    @IBOutlet weak var areaA1TVVolumeSlider: UISlider!
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
