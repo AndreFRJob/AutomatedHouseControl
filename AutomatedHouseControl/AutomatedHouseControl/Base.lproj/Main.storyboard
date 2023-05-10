@@ -704,6 +704,12 @@
                         <outlet property="areaA1TVTitleLabel" destination="9Pw-2C-rag" id="a07-Nq-Ge8"/>
                         <outlet property="areaA1TVVolumeSlider" destination="1vI-yv-yIs" id="bpc-Dc-kRW"/>
                         <outlet property="areaA1TVVolumeTitleLabel" destination="oKQ-Jm-9oI" id="Zxt-ei-KMh"/>
+                        <outlet property="areaA2SomChoosePlaylistLabel" destination="YRT-y6-99S" id="T12-Cd-rqy"/>
+                        <outlet property="areaA2SomChoosePlaylistPickerView" destination="bkR-GF-4Pk" id="eDD-XS-s9B"/>
+                        <outlet property="areaA2SomOnOffSwitch" destination="DKY-x8-Faw" id="l2v-ou-wPt"/>
+                        <outlet property="areaA2SomTitleLabel" destination="Reg-Nq-bp4" id="1ho-bk-dbB"/>
+                        <outlet property="areaA2SomVolumeSlider" destination="cOc-jK-gMz" id="heS-ON-c25"/>
+                        <outlet property="areaA2SomVolumeTitleLabel" destination="w4W-5r-La7" id="jVT-FG-CGX"/>
                         <outlet property="areaAGeneralButton" destination="TLm-U3-YcT" id="XqM-bP-75L"/>
                         <outlet property="areaAGeneralTitleLabel" destination="rdt-no-deP" id="Y2a-Yh-Fio"/>
                         <outlet property="areaBGeneralButton" destination="35D-Kr-GP6" id="Jai-nO-9E2"/>

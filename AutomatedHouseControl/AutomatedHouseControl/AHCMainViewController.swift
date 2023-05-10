@@ -27,10 +27,12 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var areaA1TVVolumeTitleLabel: UILabel!
     @IBOutlet weak var areaA1TVVolumeSlider: UISlider!
     
-    
-    
-    
-    
+    @IBOutlet weak var areaA2SomOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaA2SomTitleLabel: UILabel!
+    @IBOutlet weak var areaA2SomChoosePlaylistPickerView: UIPickerView!
+    @IBOutlet weak var areaA2SomChoosePlaylistLabel: UILabel!
+    @IBOutlet weak var areaA2SomVolumeTitleLabel: UILabel!
+    @IBOutlet weak var areaA2SomVolumeSlider: UISlider!
     
     
     
