@@ -744,6 +744,8 @@
                         <outlet property="areaC2SegurancaTitleLabel" destination="Wsz-fi-6Ez" id="jvM-w0-7s8"/>
                         <outlet property="areaCGeneralButton" destination="RQz-m4-sRz" id="FKR-cq-lSD"/>
                         <outlet property="areaCGeneralTitleLabel" destination="nvc-7A-of6" id="Ny6-GT-qsh"/>
+                        <outlet property="baseboardTitleLabel" destination="Sdm-Ff-fys" id="Fdj-Sv-k5S"/>
+                        <outlet property="generalFirstScreenTitleLabel" destination="jFu-ue-G2m" id="uld-qv-8py"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

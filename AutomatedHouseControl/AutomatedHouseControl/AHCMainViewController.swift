@@ -66,6 +66,8 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var areaC2CamerasTitleLabel: UILabel!
     @IBOutlet weak var areaC2CamerasOnOffSwitch: UISwitch!
     
+    @IBOutlet weak var baseboardTitleLabel: UILabel!
+    @IBOutlet weak var generalFirstScreenTitleLabel: UILabel!
     
    
     
