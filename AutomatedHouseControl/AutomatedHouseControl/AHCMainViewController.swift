@@ -52,6 +52,26 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var areaB2AquecedorTimerTitleLabel: UILabel!
     @IBOutlet weak var areaB2AquecedorTimerChoosePickerView: UIPickerView!
     
+    @IBOutlet weak var areaC1LuzTitleLabel: UILabel!
+    @IBOutlet weak var areaC1LuzOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaC1LuzClarityTitleLabel: UILabel!
+    @IBOutlet weak var areaC1LuzClaritySlider: UISlider!
+    @IBOutlet weak var areaC1LuzTimerTitleLabel: UILabel!
+    @IBOutlet weak var areaC1LuzTimerChoosePickerView: UIPickerView!
+    
+    @IBOutlet weak var areaC2SegurancaTitleLabel: UILabel!
+    @IBOutlet weak var areaC2SegurancaGeneralOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaC2AlarmTitleLabel: UILabel!
+    @IBOutlet weak var areaC2AlarmOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaC2CamerasTitleLabel: UILabel!
+    @IBOutlet weak var areaC2CamerasOnOffSwitch: UISwitch!
+    
+    
+   
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

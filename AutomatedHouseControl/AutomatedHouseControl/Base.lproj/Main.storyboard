@@ -508,15 +508,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-eb-g9B">
                                                         <rect key="frame" x="0.0" y="61.666666666666629" width="196.66666666666666" height="61.666666666666657"/>
                                                         <subviews>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-Zm-Dr7">
-                                                                <rect key="frame" x="96.666666666666686" y="16" width="98" height="31"/>
-                                                            </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLARIDADE:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSU-YG-R0F">
                                                                 <rect key="frame" x="4" y="22.333333333333371" width="80.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pjg-Zm-Dr7">
+                                                                <rect key="frame" x="96.666666666666686" y="16" width="98" height="31"/>
+                                                            </slider>
                                                         </subviews>
                                                         <color key="backgroundColor" red="1" green="0.033621196461478542" blue="0.31567709678202782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -730,6 +730,18 @@
                         <outlet property="areaB2AquecedorTitleLabel" destination="jRY-dz-ZFg" id="6Q5-lz-6dY"/>
                         <outlet property="areaBGeneralButton" destination="35D-Kr-GP6" id="Jai-nO-9E2"/>
                         <outlet property="areaBGeneralTitleLabel" destination="7CG-r3-Gsw" id="Y7u-5P-uWH"/>
+                        <outlet property="areaC1LuzClaritySlider" destination="pjg-Zm-Dr7" id="9MH-DG-zaP"/>
+                        <outlet property="areaC1LuzClarityTitleLabel" destination="BSU-YG-R0F" id="2ny-Sv-xFS"/>
+                        <outlet property="areaC1LuzOnOffSwitch" destination="dTK-R6-eeg" id="Dcl-KK-Gcl"/>
+                        <outlet property="areaC1LuzTimerChoosePickerView" destination="17p-zN-BRg" id="R0S-z2-MOf"/>
+                        <outlet property="areaC1LuzTimerTitleLabel" destination="Ng9-In-ybO" id="M26-kl-dja"/>
+                        <outlet property="areaC1LuzTitleLabel" destination="Hcs-TE-lAM" id="7Gw-yN-e62"/>
+                        <outlet property="areaC2AlarmOnOffSwitch" destination="CPA-LC-5bj" id="Ucv-5i-Icg"/>
+                        <outlet property="areaC2AlarmTitleLabel" destination="Hrg-WC-heL" id="71Q-Se-Soz"/>
+                        <outlet property="areaC2CamerasOnOffSwitch" destination="Bp4-ej-m30" id="IN8-Lc-V7Z"/>
+                        <outlet property="areaC2CamerasTitleLabel" destination="Oad-Rf-j1h" id="gWq-MX-4JM"/>
+                        <outlet property="areaC2SegurancaGeneralOnOffSwitch" destination="FFe-9Z-SaC" id="PAC-IE-1zS"/>
+                        <outlet property="areaC2SegurancaTitleLabel" destination="Wsz-fi-6Ez" id="jvM-w0-7s8"/>
                         <outlet property="areaCGeneralButton" destination="RQz-m4-sRz" id="FKR-cq-lSD"/>
                         <outlet property="areaCGeneralTitleLabel" destination="nvc-7A-of6" id="Ny6-GT-qsh"/>
                     </connections>
