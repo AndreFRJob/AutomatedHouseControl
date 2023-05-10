@@ -327,15 +327,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r95-tg-bYH">
                                                         <rect key="frame" x="0.0" y="61.666666666666686" width="196.66666666666666" height="61.666666666666657"/>
                                                         <subviews>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L9O-f6-Spc">
-                                                                <rect key="frame" x="120.33333333333334" y="16" width="74.333333333333343" height="31"/>
-                                                            </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPERATURA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcy-IS-Ag0">
                                                                 <rect key="frame" x="4" y="22.333333333333314" width="104.33333333333333" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="L9O-f6-Spc">
+                                                                <rect key="frame" x="120.33333333333334" y="16" width="74.333333333333343" height="31"/>
+                                                            </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cº" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03K-EG-PQn">
                                                                 <rect key="frame" x="176" y="39.333333333333314" width="18.666666666666657" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -415,15 +415,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="END-zz-4rW">
                                                         <rect key="frame" x="0.0" y="61.666666666666686" width="196.33333333333334" height="61.666666666666657"/>
                                                         <subviews>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4C4-5j-caV">
-                                                                <rect key="frame" x="120.33333333333334" y="16" width="74" height="31"/>
-                                                            </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPERATURA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHp-rh-Tkn">
                                                                 <rect key="frame" x="4" y="22.333333333333314" width="104.33333333333333" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4C4-5j-caV">
+                                                                <rect key="frame" x="120.33333333333334" y="16" width="74" height="31"/>
+                                                            </slider>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cº" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYF-a9-hQp">
                                                                 <rect key="frame" x="175.66666666666666" y="39.333333333333314" width="18.666666666666657" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -712,6 +712,22 @@
                         <outlet property="areaA2SomVolumeTitleLabel" destination="w4W-5r-La7" id="jVT-FG-CGX"/>
                         <outlet property="areaAGeneralButton" destination="TLm-U3-YcT" id="XqM-bP-75L"/>
                         <outlet property="areaAGeneralTitleLabel" destination="rdt-no-deP" id="Y2a-Yh-Fio"/>
+                        <outlet property="areaB1ArCondOnOffSwitch" destination="0cu-EL-ezn" id="eNp-Ye-6W5"/>
+                        <outlet property="areaB1ArCondPowerTitleLabel" destination="hIU-h6-Fvs" id="mE1-e5-usi"/>
+                        <outlet property="areaB1ArCondTemperatureCMark" destination="03K-EG-PQn" id="Vow-uV-qa6"/>
+                        <outlet property="areaB1ArCondTemperatureChoosePowerPickerView" destination="tKN-Rj-7pw" id="FEi-3V-eck"/>
+                        <outlet property="areaB1ArCondTemperatureQuantity" destination="056-8Z-HZF" id="woH-eN-nAl"/>
+                        <outlet property="areaB1ArCondTemperatureSlider" destination="L9O-f6-Spc" id="me5-d5-6qW"/>
+                        <outlet property="areaB1ArCondTemperatureTitleLabel" destination="Bcy-IS-Ag0" id="cXf-eL-nzp"/>
+                        <outlet property="areaB1ArCondTitleLabel" destination="tZT-Sz-Ll3" id="4Pu-vG-Xo2"/>
+                        <outlet property="areaB2AquecedorOnOffSwitch" destination="0cu-EL-ezn" id="KfS-fE-r7f"/>
+                        <outlet property="areaB2AquecedorTemperatureCMark" destination="lYF-a9-hQp" id="Ea5-Q7-Hej"/>
+                        <outlet property="areaB2AquecedorTemperatureQuantity" destination="8gK-Jl-fqm" id="e9Z-fX-piT"/>
+                        <outlet property="areaB2AquecedorTemperatureSlider" destination="4C4-5j-caV" id="eof-1m-7En"/>
+                        <outlet property="areaB2AquecedorTemperatureTitleLabel" destination="xHp-rh-Tkn" id="USp-JX-Edu"/>
+                        <outlet property="areaB2AquecedorTimerChoosePickerView" destination="2KV-Lm-wYq" id="3O4-1F-MXt"/>
+                        <outlet property="areaB2AquecedorTimerTitleLabel" destination="geQ-J4-rSq" id="MCw-ob-jx3"/>
+                        <outlet property="areaB2AquecedorTitleLabel" destination="jRY-dz-ZFg" id="6Q5-lz-6dY"/>
                         <outlet property="areaBGeneralButton" destination="35D-Kr-GP6" id="Jai-nO-9E2"/>
                         <outlet property="areaBGeneralTitleLabel" destination="7CG-r3-Gsw" id="Y7u-5P-uWH"/>
                         <outlet property="areaCGeneralButton" destination="RQz-m4-sRz" id="FKR-cq-lSD"/>

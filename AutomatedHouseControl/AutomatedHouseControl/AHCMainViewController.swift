@@ -34,7 +34,23 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var areaA2SomVolumeTitleLabel: UILabel!
     @IBOutlet weak var areaA2SomVolumeSlider: UISlider!
     
+    @IBOutlet weak var areaB1ArCondTitleLabel: UILabel!
+    @IBOutlet weak var areaB1ArCondOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaB1ArCondTemperatureTitleLabel: UILabel!
+    @IBOutlet weak var areaB1ArCondTemperatureSlider: UISlider!
+    @IBOutlet weak var areaB1ArCondTemperatureCMark: UILabel!
+    @IBOutlet weak var areaB1ArCondTemperatureQuantity: UILabel!
+    @IBOutlet weak var areaB1ArCondPowerTitleLabel: UILabel!
+    @IBOutlet weak var areaB1ArCondTemperatureChoosePowerPickerView: UIPickerView!
     
+    @IBOutlet weak var areaB2AquecedorTitleLabel: UILabel!
+    @IBOutlet weak var areaB2AquecedorOnOffSwitch: UISwitch!
+    @IBOutlet weak var areaB2AquecedorTemperatureTitleLabel: UILabel!
+    @IBOutlet weak var areaB2AquecedorTemperatureSlider: UISlider!
+    @IBOutlet weak var areaB2AquecedorTemperatureCMark: UILabel!
+    @IBOutlet weak var areaB2AquecedorTemperatureQuantity: UILabel!
+    @IBOutlet weak var areaB2AquecedorTimerTitleLabel: UILabel!
+    @IBOutlet weak var areaB2AquecedorTimerChoosePickerView: UIPickerView!
     
     
     override func viewDidLoad() {
