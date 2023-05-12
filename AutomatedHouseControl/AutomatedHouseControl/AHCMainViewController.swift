@@ -84,21 +84,21 @@ class AHCMainViewController: UIViewController {
     }
     
     
-    @IBAction func areaA1TVSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaA1TVSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaA2SomSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaA2SomSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaB1ArCondSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaB1ArCondSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaB2AquecSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaB2AquecSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaC1LuzSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaC1LuzSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaC2SegTVSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaC2SegTVSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaC2AlrmSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaC2AlrmSwitchChanged(_ sender: UISwitch) {
     }
-    @IBAction func areaC2CamSwitchTapped(_ sender: UISwitch) {
+    @IBAction func areaC2CamSwitchChanged(_ sender: UISwitch) {
     }
     
 }
