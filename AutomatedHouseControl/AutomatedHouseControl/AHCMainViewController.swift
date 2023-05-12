@@ -69,17 +69,37 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var baseboardTitleLabel: UILabel!
     @IBOutlet weak var generalFirstScreenTitleLabel: UILabel!
     
-   
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func areaAGeneralButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func areaBGeneralButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func areaCGeneralButtonTapped(_ sender: Any) {
+    }
+    @IBAction func generalButtonTapped(_ sender: Any) {
+    }
+    
+    
+    @IBAction func areaA1TVSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaA2SomSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaB1ArCondSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaB2AquecSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaC1LuzSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaC2SegTVSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaC2AlrmSwitchChanged(_ sender: UISwitch) {
+    }
+    @IBAction func areaC2CamSwitchChanged(_ sender: UISwitch) {
+    }
+    
 }
 
