@@ -105,36 +105,36 @@ class AHCMainViewController: UIViewController {
 
 extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        var numberOfComponents: Int = 0
+        var numberOfComponents: Int = viewModel.oneComponetNumber
         
-        if(pickerView == tvChooseChanelPickerView) {
-            numberOfComponents = viewModel.oneComponetNumber
-        }
-        if(pickerView == somChoosePlaylistPickerView) {
-            numberOfComponents = viewModel.oneComponentNumber
-        }
-        if(pickerView == temperatureChoosePowerPickerView) {
-            numberOfComponents = viewModel.oneComponentNumber
-        }
         if(pickerView == timerChoosePickerView) {
             numberOfComponents = viewModel.timerComponentsNumber
         }
+        
+        return numberOfComponents
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         var numbersOfRows: Int = 0
         
         if(pickerView == tvChooseChanelPickerView) {
-            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+            numbersOfRows = viewModel.tvChanelNumRows
         }
         if(pickerView == somChoosePlaylistPickerView) {
-            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+            numbersOfRows = viewModel.somPlaylistNumRows
         }
         if(pickerView == temperatureChoosePowerPickerView) {
-            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+            numbersOfRows = viewModel.temperatureNumRows
         }
         if(pickerView == timerChoosePickerView) {
-            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+            switch component {
+            case 0:
+                numbersOfRows = viewModel.timerHourNumRows
+            case 1:
+                numbersOfRows = viewModel.timerMinuteNumRows
+            case default:
+                numbersOfRows = viewModel.timerSecondsNumRows
+            }
         }
         
         return numbersOfRows
@@ -161,16 +161,9 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if(pickerView == chooseHamburgerPickerView) {
-            viewModel.didSelectHamburgerPicker(index: row)
-        }
-        if(pickerView == chooseExtraPickerView) {
-            viewModel.didSelectExtraPicker(index: row)
-        }
-        
         
         if(pickerView == tvChooseChanelPickerView) {
-            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+            viewModel.didSelectTVPicker(row: row)
         }
         if(pickerView == somChoosePlaylistPickerView) {
             viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
@@ -179,9 +172,14 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
         }
         if(pickerView == timerChoosePickerView) {
-            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+            switch component {
+            case 0:
+                numbersOfRows = viewModel.didSelectHourPicker(row: row)
+            case 1:
+                numbersOfRows = viewModel.didSelectMinutePicker(row: row)
+            case default:
+                numbersOfRows = viewModel.didSelectSecondPicker(row: row)
+            }
         }
-        
-        updateUI()
     }
 }
