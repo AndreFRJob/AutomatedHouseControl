@@ -103,3 +103,85 @@ class AHCMainViewController: UIViewController {
     
 }
 
+extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        var numberOfComponents: Int = 0
+        
+        if(pickerView == tvChooseChanelPickerView) {
+            numberOfComponents = viewModel.oneComponetNumber
+        }
+        if(pickerView == somChoosePlaylistPickerView) {
+            numberOfComponents = viewModel.oneComponentNumber
+        }
+        if(pickerView == temperatureChoosePowerPickerView) {
+            numberOfComponents = viewModel.oneComponentNumber
+        }
+        if(pickerView == timerChoosePickerView) {
+            numberOfComponents = viewModel.timerComponentsNumber
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        var numbersOfRows: Int = 0
+        
+        if(pickerView == tvChooseChanelPickerView) {
+            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == somChoosePlaylistPickerView) {
+            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == temperatureChoosePowerPickerView) {
+            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == timerChoosePickerView) {
+            numbersOfRows = viewModel.numberOfRowSearch(pickerView: UIPickerView)
+        }
+        
+        return numbersOfRows
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var rowTitle: String?
+        
+        if(pickerView == tvChooseChanelPickerView) {
+            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == somChoosePlaylistPickerView) {
+            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == temperatureChoosePowerPickerView) {
+            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+        }
+        if(pickerView == timerChoosePickerView) {
+            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+        }
+        
+        return rowTitle
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if(pickerView == chooseHamburgerPickerView) {
+            viewModel.didSelectHamburgerPicker(index: row)
+        }
+        if(pickerView == chooseExtraPickerView) {
+            viewModel.didSelectExtraPicker(index: row)
+        }
+        
+        
+        if(pickerView == tvChooseChanelPickerView) {
+            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        }
+        if(pickerView == somChoosePlaylistPickerView) {
+            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        }
+        if(pickerView == temperatureChoosePowerPickerView) {
+            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        }
+        if(pickerView == timerChoosePickerView) {
+            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        }
+        
+        updateUI()
+    }
+}
