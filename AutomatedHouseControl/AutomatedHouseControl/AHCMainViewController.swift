@@ -107,7 +107,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         var numberOfComponents: Int = viewModel.oneComponetNumber
         
-        if(pickerView == timerChoosePickerView) {
+        if(pickerView == areaC1LuzTimerChoosePickerView) {
             numberOfComponents = viewModel.timerComponentsNumber
         }
         
@@ -116,17 +116,17 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         var numbersOfRows: Int = 0
-        
-        if(pickerView == tvChooseChanelPickerView) {
+
+        if(pickerView == areaA1TVChooseChanelPickerView) {
             numbersOfRows = viewModel.tvChanelNumRows
         }
-        if(pickerView == somChoosePlaylistPickerView) {
+        if(pickerView == areaA2SomChoosePlaylistPickerView) {
             numbersOfRows = viewModel.somPlaylistNumRows
         }
-        if(pickerView == temperatureChoosePowerPickerView) {
+        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
             numbersOfRows = viewModel.temperatureNumRows
         }
-        if(pickerView == timerChoosePickerView) {
+        if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
             case 0:
                 numbersOfRows = viewModel.timerHourNumRows
@@ -143,16 +143,16 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var rowTitle: String?
         
-        if(pickerView == tvChooseChanelPickerView) {
+        if(pickerView == areaA1TVChooseChanelPickerView) {
             rowTitle = viewModel.titleForTVChanelPicker(index: row)
         }
-        if(pickerView == somChoosePlaylistPickerView) {
+        if(pickerView == areaA2SomChoosePlaylistPickerView) {
             rowTitle = viewModel.titleForSomPlaylistPicker(index: row)
         }
-        if(pickerView == temperatureChoosePowerPickerView) {
+        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
         }
-        if(pickerView == timerChoosePickerView) {
+        if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch componet {
             case 0:
                 rowTitle = viewModel.titleForHourTimerPicker(index: row)
@@ -169,16 +169,16 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         
-        if(pickerView == tvChooseChanelPickerView) {
+        if(pickerView == areaA1TVChooseChanelPickerView) {
             viewModel.didSelectTVPicker(row: row)
         }
-        if(pickerView == somChoosePlaylistPickerView) {
-            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        if(pickerView == areaA2SomChoosePlaylistPickerView) {
+            viewModel.didSelectPlaylistPicker(row: row)
         }
-        if(pickerView == temperatureChoosePowerPickerView) {
-            viewModel.didSelectRowGeneralPickerView(pickerView: UIPickerView)
+        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+            viewModel.didSelectTemperaturePicker(row: row)
         }
-        if(pickerView == timerChoosePickerView) {
+        if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
             case 0:
                 numbersOfRows = viewModel.didSelectHourPicker(row: row)
