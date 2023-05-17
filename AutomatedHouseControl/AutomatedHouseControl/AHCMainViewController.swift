@@ -144,16 +144,23 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         var rowTitle: String?
         
         if(pickerView == tvChooseChanelPickerView) {
-            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+            rowTitle = viewModel.titleForTVChanelPicker(index: row)
         }
         if(pickerView == somChoosePlaylistPickerView) {
-            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+            rowTitle = viewModel.titleForSomPlaylistPicker(index: row)
         }
         if(pickerView == temperatureChoosePowerPickerView) {
-            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+            rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
         }
         if(pickerView == timerChoosePickerView) {
-            rowTitle = viewModel.titleForRowSearch(pickerView: UIPickerView)
+            switch componet {
+            case 0:
+                rowTitle = viewModel.titleForHourTimerPicker(index: row)
+            case 1:
+                rowTitle = viewModel.titleForMinuteTimerPicker(index: row)
+            case default:
+                rowTitle = viewModel.titleForSecondTimerPicker(index: row)
+            }
         }
         
         return rowTitle
