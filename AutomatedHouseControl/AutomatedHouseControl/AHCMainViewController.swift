@@ -9,6 +9,8 @@ import UIKit
 
 class AHCMainViewController: UIViewController {
     
+    var viewModel: AHCMainViewModel
+    
     @IBOutlet weak var areaAGeneralButton: UIButton!
     @IBOutlet weak var areaAGeneralTitleLabel: UILabel!
     
@@ -132,7 +134,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 numbersOfRows = viewModel.timerHourNumRows
             case 1:
                 numbersOfRows = viewModel.timerMinuteNumRows
-            case default:
+            default:
                 numbersOfRows = viewModel.timerSecondsNumRows
             }
         }
@@ -153,12 +155,12 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
         }
         if(pickerView == areaC1LuzTimerChoosePickerView) {
-            switch componet {
+            switch component {
             case 0:
                 rowTitle = viewModel.titleForHourTimerPicker(index: row)
             case 1:
                 rowTitle = viewModel.titleForMinuteTimerPicker(index: row)
-            case default:
+            default:
                 rowTitle = viewModel.titleForSecondTimerPicker(index: row)
             }
         }
@@ -167,7 +169,6 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         
         if(pickerView == areaA1TVChooseChanelPickerView) {
             viewModel.didSelectTVPicker(row: row)
@@ -180,12 +181,13 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         }
         if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
+            
             case 0:
-                numbersOfRows = viewModel.didSelectHourPicker(row: row)
+                viewModel.didSelectHourPicker(row: row)
             case 1:
-                numbersOfRows = viewModel.didSelectMinutePicker(row: row)
-            case default:
-                numbersOfRows = viewModel.didSelectSecondPicker(row: row)
+                viewModel.didSelectMinutePicker(row: row)
+            default:
+                viewModel.didSelectSecondPicker(row: row)
             }
         }
     }
