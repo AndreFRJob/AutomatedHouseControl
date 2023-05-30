@@ -8,14 +8,17 @@
 import Foundation
 
 class ArCondicionado: EletronicsProtocol {
-    var powerLevel: String
+    var powerLevel: [String]
+    var selectedPowerLevel: Int
+    
     var temperature: Float
     let minTemperature: Float
     let maxTemperatura: Float
     var isOn: Bool
     
-    init(powerLevel: String, temperature: Float, minTemperature: Float, maxTemperatura: Float, isOn: Bool) {
+    init(powerLevel: [String], selectedPowerLevel: Int, temperature: Float, minTemperature: Float, maxTemperatura: Float, isOn: Bool) {
         self.powerLevel = powerLevel
+        self.selectedPowerLevel = selectedPowerLevel
         self.temperature = temperature
         self.minTemperature = minTemperature
         self.maxTemperatura = maxTemperatura
@@ -23,7 +26,7 @@ class ArCondicionado: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol {
-        return ArCondicionado(powerLevel: "Low", temperature: 0.85, minTemperature: 0.00, maxTemperatura: 1.00, isOn: True)
+        return ArCondicionado(powerLevel: [Hight], selectedPowerLevel: 0, temperature: 0.80, minTemperature: 0.01, maxTemperatura: 1.00, isOn: true)
     }
     
     

@@ -9,6 +9,11 @@ import Foundation
 
 class AHCMainViewModel {
     
+    private var som: Som = Som.mock() as! Som
+    private var tv: TV = TV.mock() as! TV
+    private var arCondicionado: ArCondicionado = ArCondicionado.mock() as! ArCondicionado
+    private var aquecedor: Aquecedor = Aquecedor.mock() as! Aquecedor
+    
     public let oneComponetNumber: Int = 1
     public let timerComponentsNumber: Int = 3
     
@@ -20,27 +25,28 @@ class AHCMainViewModel {
     public var timerSecondsNumRows: Int = 60
     
     // Mark: Actions
-    func titleForTVChanelPicker(index: Int) -> String? {
-        return ""
+    func titleForTVChanelPicker(index: Int) -> Int? {
+        return tv.channel[index]
     }
     
     func titleForSomPlaylistPicker(index: Int) -> String? {
-        return ""
+        return som.playlists[index]
+        
     }
     
     func titleForTemperaturePowerPicker(index: Int) -> String? {
+        return arCondicionado.powerLevel[index]
+    }
+    
+    func titleForHourTimerPicker(index: Int) -> Int? {
         return ""
     }
     
-    func titleForHourTimerPicker(index: Int) -> String? {
+    func titleForMinuteTimerPicker(index: Int) -> Int? {
         return ""
     }
     
-    func titleForMinuteTimerPicker(index: Int) -> String? {
-        return ""
-    }
-    
-    func titleForSecondTimerPicker(index: Int) -> String? {
+    func titleForSecondTimerPicker(index: Int) -> Int? {
         return ""
     }
     

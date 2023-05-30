@@ -13,12 +13,12 @@ class Aquecedor: EletronicsProtocol {
     var temperature: Float
     let minTemperature: Float
     let maxTemperatura: Float
-    var hour: Int
-    var minute: Int
-    var second: Int
+    var hour: [Int]
+    var minute: [Int]
+    var second: [Int]
     var isOn: Bool
     
-    init(temperature: Float, minTemperature: Float, maxTemperatura: Float, hour: Int, minute: Int, second: Int, isOn: Bool) {
+    init(temperature: Float, minTemperature: Float, maxTemperatura: Float, hour: [Int], minute: [Int], second: [Int], isOn: Bool) {
         self.temperature = temperature
         self.minTemperature = minTemperature
         self.maxTemperatura = maxTemperatura

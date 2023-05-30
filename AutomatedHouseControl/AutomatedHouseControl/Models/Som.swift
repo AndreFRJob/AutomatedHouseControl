@@ -8,7 +8,9 @@
 import Foundation
 
 class Som: EletronicsProtocol {
-    var playlist: String
+    
+    var playlists: [String]
+    var selectedPlaylistIndex: Int
     
     var volume: Float
     let minVolume: Float
@@ -16,8 +18,9 @@ class Som: EletronicsProtocol {
     
     var isOn: Bool
     
-    init(playlist: String, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
-        self.playlist = playlist
+    init(playlists: [String], selectedPlaylistIndex: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
+        self.playlists = playlists
+        self.selectedPlaylistIndex = selectedPlaylistIndex
         self.volume = volume
         self.maxVolume = maxVolume
         self.minVolume = minVolume
@@ -26,8 +29,11 @@ class Som: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol {
-        return Som(playlist: "Chimarruts", volume: 0.99, minVolume: 0.01, maxVolume: 1.00, isOn: true)
+        return Som(playlists: ["Chimarruts"], selectedPlaylistIndex: 0, volume: 0.85, minVolume: 0.01, maxVolume: 1.00, isOn: true)
     }
     
-    
+}
+
+extension Som {
+
 }
