@@ -9,7 +9,7 @@ import UIKit
 
 class AHCMainViewController: UIViewController {
     
-    var viewModel: AHCMainViewModel
+    var viewModel: AHCMainViewModel = .init()
     
     @IBOutlet weak var areaAGeneralButton: UIButton!
     @IBOutlet weak var areaAGeneralTitleLabel: UILabel!
@@ -157,11 +157,11 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
             case 0:
-                rowTitle = viewModel.titleForHourTimerPicker(index: row)
+                rowTitle = viewModel.titleForHoursLuzTimerPicker(index: row)
             case 1:
-                rowTitle = viewModel.titleForMinuteTimerPicker(index: row)
+                rowTitle = viewModel.titleForMinutesLuzTimerPicker(index: row)
             default:
-                rowTitle = viewModel.titleForSecondTimerPicker(index: row)
+                rowTitle = viewModel.titleForSecondsLuzTimerPicker(index: row)
             }
         }
         

@@ -26,7 +26,7 @@ class ArCondicionado: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol {
-        return ArCondicionado(powerLevel: [Hight], selectedPowerLevel: 0, temperature: 0.80, minTemperature: 0.01, maxTemperatura: 1.00, isOn: true)
+        return ArCondicionado(powerLevel: ["Hight"], selectedPowerLevel: 0, temperature: 0.80, minTemperature: 0.01, maxTemperatura: 1.00, isOn: true)
     }
     
     

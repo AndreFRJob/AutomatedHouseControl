@@ -13,6 +13,7 @@ class AHCMainViewModel {
     private var tv: TV = TV.mock() as! TV
     private var arCondicionado: ArCondicionado = ArCondicionado.mock() as! ArCondicionado
     private var aquecedor: Aquecedor = Aquecedor.mock() as! Aquecedor
+    private var luz: Luz = Luz.mock() as! Luz
     
     public let oneComponetNumber: Int = 1
     public let timerComponentsNumber: Int = 3
@@ -25,8 +26,8 @@ class AHCMainViewModel {
     public var timerSecondsNumRows: Int = 60
     
     // Mark: Actions
-    func titleForTVChanelPicker(index: Int) -> Int? {
-        return tv.channel[index]
+    func titleForTVChanelPicker(index: Int) -> String? {
+        return String(tv.channel[index])
     }
     
     func titleForSomPlaylistPicker(index: Int) -> String? {
@@ -38,16 +39,28 @@ class AHCMainViewModel {
         return arCondicionado.powerLevel[index]
     }
     
-    func titleForHourTimerPicker(index: Int) -> Int? {
-        return ""
+    func titleForHoursAquecedorTimerPicker(index: Int) -> Int? {
+        return aquecedor.hour[index]
     }
     
-    func titleForMinuteTimerPicker(index: Int) -> Int? {
-        return ""
+    func titleForMinutesAquecedorTimerPicker(index: Int) -> Int? {
+        return aquecedor.minute[index]
     }
     
-    func titleForSecondTimerPicker(index: Int) -> Int? {
-        return ""
+    func titleForSecondsAquecedorTimerPicker(index: Int) -> Int? {
+        return aquecedor.second[index]
+    }
+    
+    func titleForHoursLuzTimerPicker(index: Int) -> String? {
+        return String(luz.hour[index])
+    }
+    
+    func titleForMinutesLuzTimerPicker(index: Int) -> String? {
+        return String(luz.minute[index])
+    }
+    
+    func titleForSecondsLuzTimerPicker(index: Int) -> String? {
+        return String(luz.second[index])
     }
     
     func didSelectTVPicker(row: Int) {

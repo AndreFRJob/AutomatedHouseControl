@@ -29,6 +29,6 @@ class Aquecedor: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol {
-        return Aquecedor(temperature: 0.35, minTemperature: 0.01, maxTemperatura: 1.00, hour: 5, minute: 16, second: 1, isOn: true)
+        return Aquecedor(temperature: 0.35, minTemperature: 0.01, maxTemperatura: 1.00, hour: [5], minute: [16], second: [1], isOn: true)
     }
 }
