@@ -9,6 +9,7 @@ import Foundation
 
 class AHCMainViewModel {
     
+    // MARK: Atributes
     private var som: Som = Som.mock() as! Som
     private var tv: TV = TV.mock() as! TV
     private var arCondicionado: ArCondicionado = ArCondicionado.mock() as! ArCondicionado
@@ -25,7 +26,7 @@ class AHCMainViewModel {
     public var timerMinuteNumRows: Int = 60
     public var timerSecondsNumRows: Int = 60
     
-    // Mark: Actions
+    // MARK: Helpers
     func titleForTVChanelPicker(index: Int) -> String? {
         return String(tv.channel[index])
     }

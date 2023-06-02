@@ -17,6 +17,7 @@
 		CE2F5B3E29F9AFF7008D2DA9 /* AutomatedHouseControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F5B3D29F9AFF7008D2DA9 /* AutomatedHouseControlUITests.swift */; };
 		CE2F5B4029F9AFF7008D2DA9 /* AutomatedHouseControlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F5B3F29F9AFF7008D2DA9 /* AutomatedHouseControlUITestsLaunchTests.swift */; };
 		CE2F5B4D29FC5386008D2DA9 /* AHCMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F5B4C29FC5386008D2DA9 /* AHCMainViewModel.swift */; };
+		CE8857222A29F096002A4BF8 /* TVChannelEnun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8857212A29F096002A4BF8 /* TVChannelEnun.swift */; };
 		CECED01F2A1E9A5D00497DB2 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED01E2A1E9A5D00497DB2 /* TV.swift */; };
 		CECED0222A1E9EFE00497DB2 /* EletronicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0212A1E9EFE00497DB2 /* EletronicsProtocol.swift */; };
 		CECED0242A2136F200497DB2 /* Som.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0232A2136F200497DB2 /* Som.swift */; };
@@ -58,6 +59,7 @@
 		CE2F5B3D29F9AFF7008D2DA9 /* AutomatedHouseControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedHouseControlUITests.swift; sourceTree = "<group>"; };
 		CE2F5B3F29F9AFF7008D2DA9 /* AutomatedHouseControlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedHouseControlUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE2F5B4C29FC5386008D2DA9 /* AHCMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHCMainViewModel.swift; sourceTree = "<group>"; };
+		CE8857212A29F096002A4BF8 /* TVChannelEnun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVChannelEnun.swift; sourceTree = "<group>"; };
 		CECED01E2A1E9A5D00497DB2 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
 		CECED0212A1E9EFE00497DB2 /* EletronicsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EletronicsProtocol.swift; sourceTree = "<group>"; };
 		CECED0232A2136F200497DB2 /* Som.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Som.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = AutomatedHouseControlUITests;
 			sourceTree = "<group>";
 		};
+		CE8857202A29F03B002A4BF8 /* Enuns */ = {
+			isa = PBXGroup;
+			children = (
+				CE8857212A29F096002A4BF8 /* TVChannelEnun.swift */,
+			);
+			path = Enuns;
+			sourceTree = "<group>";
+		};
 		CECED01C2A1E993100497DB2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		CECED01D2A1E994F00497DB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE8857202A29F03B002A4BF8 /* Enuns */,
 				CECED01E2A1E9A5D00497DB2 /* TV.swift */,
 				CECED0232A2136F200497DB2 /* Som.swift */,
 				CECED0252A21390F00497DB2 /* ArCondicionado.swift */,
@@ -313,6 +324,7 @@
 				CECED0262A21390F00497DB2 /* ArCondicionado.swift in Sources */,
 				CECED0282A213B6500497DB2 /* Aquecedor.swift in Sources */,
 				CE2F5B4D29FC5386008D2DA9 /* AHCMainViewModel.swift in Sources */,
+				CE8857222A29F096002A4BF8 /* TVChannelEnun.swift in Sources */,
 				CECED02C2A21400C00497DB2 /* Segurança.swift in Sources */,
 				CECED02A2A213E8000497DB2 /* Luz.swift in Sources */,
 				CECED01F2A1E9A5D00497DB2 /* TV.swift in Sources */,

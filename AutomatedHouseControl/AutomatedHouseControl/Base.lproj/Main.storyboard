@@ -174,6 +174,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXv-l7-lAT">
                                                                 <rect key="frame" x="143.66666666666666" y="15.333333333333343" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaA1TVSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qGd-Zz-YQN"/>
                                                                     <action selector="areaA1TVSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="DU3-S8-zxj"/>
                                                                 </connections>
                                                             </switch>
@@ -248,6 +249,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKY-x8-Faw">
                                                                 <rect key="frame" x="143.33333333333334" y="15.333333333333343" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaA2SomSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rAH-fG-sxx"/>
                                                                     <action selector="areaA2SomSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="AX2-rF-sKs"/>
                                                                 </connections>
                                                             </switch>
@@ -333,6 +335,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zz-Ng-Z4u">
                                                                 <rect key="frame" x="143.66666666666666" y="15.333333333333314" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaB1ArCondSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6XR-0h-LSZ"/>
                                                                     <action selector="areaB1ArCondSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="HtS-lU-rs2"/>
                                                                 </connections>
                                                             </switch>
@@ -424,6 +427,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-EL-ezn">
                                                                 <rect key="frame" x="143.33333333333334" y="15.333333333333314" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaB2AquecSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ar3-Vh-ku2"/>
                                                                     <action selector="areaB2AquecSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="WBP-f6-ai1"/>
                                                                 </connections>
                                                             </switch>
@@ -520,6 +524,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTK-R6-eeg">
                                                                 <rect key="frame" x="143.66666666666666" y="15.333333333333371" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaC1LuzSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="F8H-Xk-Yq6"/>
                                                                     <action selector="areaC1LuzSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="NYn-XD-mUb"/>
                                                                 </connections>
                                                             </switch>
@@ -594,6 +599,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFe-9Z-SaC">
                                                                 <rect key="frame" x="143.33333333333334" y="15.333333333333371" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaC2SegTVSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zLc-jZ-7fq"/>
                                                                     <action selector="areaC2SegTVSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="hae-0b-aVk"/>
                                                                 </connections>
                                                             </switch>
@@ -618,6 +624,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPA-LC-5bj">
                                                                 <rect key="frame" x="143.33333333333334" y="15.333333333333371" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaC2AlrmSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LL3-gL-3ye"/>
                                                                     <action selector="areaC2AlrmSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="rlI-PN-47J"/>
                                                                 </connections>
                                                             </switch>
@@ -642,6 +649,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bp4-ej-m30">
                                                                 <rect key="frame" x="143.33333333333334" y="15.333333333333258" width="51" height="31"/>
                                                                 <connections>
+                                                                    <action selector="areaC2CamSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pB6-V9-T1I"/>
                                                                     <action selector="areaC2CamSwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="i3b-no-g7G"/>
                                                                 </connections>
                                                             </switch>
