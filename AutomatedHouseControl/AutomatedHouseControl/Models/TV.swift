@@ -8,7 +8,7 @@
 import Foundation
 
 class TV: EletronicsProtocol {
-    var channel: [Int]
+    var channel: Int
     let minChannel: Int
     let maxChannel: Int
     
@@ -18,7 +18,7 @@ class TV: EletronicsProtocol {
     
     var isOn: Bool
     
-    init(channel: [Int], minChannel: Int, maxChannel: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
+    init?(channel: Int, minChannel: Int, maxChannel: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
         self.channel = channel
         self.minChannel = minChannel
         self.maxChannel = maxChannel
@@ -26,9 +26,21 @@ class TV: EletronicsProtocol {
         self.minVolume = minVolume
         self.maxVolume = maxVolume
         self.isOn = isOn
+        
+        let isValidChannelInterval = minChannel <= maxChannel
+        let isValidChannel = channel >= minChannel && channel <= maxChannel
+        let isValidVolumeInterval = minVolume <= maxVolume
+        let isValidVolume = volume >= minVolume && volume <= maxVolume
+        let isValidTV = (isValidChannelInterval) &&
+        (isValidChannel) &&
+        (isValidVolumeInterval) &&
+        (isValidVolume)
+        
+        guard isValidTV else { return nil }
     }
     
-    static func mock() -> EletronicsProtocol {
-        return TV(channel: [3], minChannel: 1, maxChannel: 10, volume: 0.92, minVolume: 0.01, maxVolume: 1.00, isOn: true)
+    static func mock() -> EletronicsProtocol? {
+    
+        return TV(channel: 6 , minChannel: 1, maxChannel: 10, volume: 0.92, minVolume: 0.01, maxVolume: 1.00, isOn: true)
     }
 }

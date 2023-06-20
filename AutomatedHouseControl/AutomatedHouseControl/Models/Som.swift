@@ -9,7 +9,8 @@ import Foundation
 
 class Som: EletronicsProtocol {
     
-    var playlists: [String]
+    let playlists: [String]
+    
     var selectedPlaylistIndex: Int
     
     var volume: Float
@@ -18,22 +19,26 @@ class Som: EletronicsProtocol {
     
     var isOn: Bool
     
-    init(playlists: [String], selectedPlaylistIndex: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
-        self.playlists = playlists
+    init?(playlists: [String], selectedPlaylistIndex: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
         self.selectedPlaylistIndex = selectedPlaylistIndex
         self.volume = volume
         self.maxVolume = maxVolume
         self.minVolume = minVolume
         self.isOn = isOn
+        self.playlists = playlists
+        
+        let isValidSelectedPlaylistIndex = selectedPlaylistIndex >= 0 && selectedPlaylistIndex <= playlists.count
+        let isValidVolume = volume >= minVolume && volume <= maxVolume && volume >= 0
+        let isValidVolumeInterval = minVolume <= maxVolume
+        let isValidSom = (isValidVolume) && (isValidSelectedPlaylistIndex) && (isValidVolumeInterval)
+        
+        guard isValidSom else { return nil }
+        
         
     }
     
-    static func mock() -> EletronicsProtocol {
-        return Som(playlists: ["Chimarruts"], selectedPlaylistIndex: 0, volume: 0.85, minVolume: 0.01, maxVolume: 1.00, isOn: true)
+    static func mock() -> EletronicsProtocol? {
+        return Som(playlists: ["Chimarruts", "Nego do Borel", "Supla", "1berto", "Caitano"] ,selectedPlaylistIndex: 1, volume: 0.85, minVolume: 0.01, maxVolume: 1.00, isOn: true)
     }
     
-}
-
-extension Som {
-
 }

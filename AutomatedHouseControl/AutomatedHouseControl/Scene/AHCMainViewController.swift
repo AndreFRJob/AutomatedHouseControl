@@ -74,6 +74,7 @@ class AHCMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupUI()
     }
 
     @IBAction func areaAGeneralButtonTapped(_ sender: UIButton) {
@@ -103,6 +104,45 @@ class AHCMainViewController: UIViewController {
     @IBAction func areaC2CamSwitchChanged(_ sender: UISwitch) {
     }
     
+// MARK: Helpers
+    
+    private func setupUI() {
+        setupLuzTimerPickerView()
+        setupTVChannelPickerView()
+        setupSomPlsylistPickerView()
+        setupAquecedorTimerChoosePickerView()
+        setupArCondTemperatureChoosePowerPickerView()
+    }
+    
+    
+    private func setupTVChannelPickerView() {
+        areaA1TVChooseChanelPickerView.delegate = self
+        areaA1TVChooseChanelPickerView.dataSource = self
+    }
+    
+    private func setupSomPlsylistPickerView() {
+        areaA2SomChoosePlaylistPickerView.delegate = self
+        areaA2SomChoosePlaylistPickerView.dataSource = self
+    }
+    
+    private func setupArCondTemperatureChoosePowerPickerView() {
+        areaB1ArCondTemperatureChoosePowerPickerView.delegate = self
+        areaB1ArCondTemperatureChoosePowerPickerView.dataSource = self
+    }
+    
+    private func setupAquecedorTimerChoosePickerView() {
+        areaB2AquecedorTimerChoosePickerView.delegate = self
+        areaB2AquecedorTimerChoosePickerView.dataSource = self
+    }
+    
+    private func setupLuzTimerPickerView() {
+        areaC1LuzTimerChoosePickerView.delegate = self
+        areaC1LuzTimerChoosePickerView.dataSource = self
+    }
+    
+    
+    
+    
 }
 
 extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -125,8 +165,19 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == areaA2SomChoosePlaylistPickerView) {
             numbersOfRows = viewModel.somPlaylistNumRows
         }
+        if(pickerView == areaB1ArCondTemperatureChoosePowerPickerView) {
+            numbersOfRows = viewModel.arCondPowerLevelNumRows
+        }
+        
         if(pickerView == areaB2AquecedorTimerChoosePickerView) {
-            numbersOfRows = viewModel.temperatureNumRows
+            switch component {
+            case 0:
+                numbersOfRows = viewModel.timerHourNumRows
+            case 1:
+                numbersOfRows = viewModel.timerMinuteNumRows
+            default:
+                numbersOfRows = viewModel.timerSecondsNumRows
+            }
         }
         if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
@@ -151,8 +202,19 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == areaA2SomChoosePlaylistPickerView) {
             rowTitle = viewModel.titleForSomPlaylistPicker(index: row)
         }
-        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+        if(pickerView == areaB1ArCondTemperatureChoosePowerPickerView) {
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
+        }
+        
+        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+            switch component {
+            case 0:
+                rowTitle = viewModel.titleForHoursAquecedorTimerPicker(index: row)
+            case 1:
+                rowTitle = viewModel.titleForMinutesAquecedorTimerPicker(index: row)
+            default:
+                rowTitle = viewModel.titleForSecondsAquecedorTimerPicker(index: row)
+            }
         }
         if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
@@ -177,7 +239,15 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             viewModel.didSelectPlaylistPicker(row: row)
         }
         if(pickerView == areaB2AquecedorTimerChoosePickerView) {
-            viewModel.didSelectTemperaturePicker(row: row)
+            switch component {
+            
+            case 0:
+                viewModel.didSelectHourPicker(row: row)
+            case 1:
+                viewModel.didSelectMinutePicker(row: row)
+            default:
+                viewModel.didSelectSecondPicker(row: row)
+            }
         }
         if(pickerView == areaC1LuzTimerChoosePickerView) {
             switch component {
@@ -190,5 +260,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 viewModel.didSelectSecondPicker(row: row)
             }
         }
+        
+        setupUI()
     }
 }

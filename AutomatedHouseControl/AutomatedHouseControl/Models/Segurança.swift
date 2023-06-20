@@ -18,7 +18,7 @@ class Segurança: EletronicsProtocol {
         self.camerasAreOn = camerasAreOn
     }
     
-    static func mock() -> EletronicsProtocol {
+    static func mock() -> EletronicsProtocol? {
         return Segurança(isOn: true, alarmIsON: false, camerasAreOn: true)
     }
     

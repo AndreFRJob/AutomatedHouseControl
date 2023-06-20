@@ -9,5 +9,5 @@ import Foundation
 
 protocol EletronicsProtocol {
     var isOn: Bool { get set }
-    static func mock() -> EletronicsProtocol
+    static func mock() -> EletronicsProtocol?
 }
