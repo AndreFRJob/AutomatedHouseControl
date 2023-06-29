@@ -37,7 +37,7 @@ class Luz: EletronicsProtocol {
     
     
     static func mock() -> EletronicsProtocol? {
-        Luz(clarity: 1.00, minClarity: 0.01, maxClarity: 1.00, hour: 0, minute: 50, second: 0, isOn: true)
+        Luz(clarity: 10, minClarity: 1, maxClarity: 100, hour: 0, minute: 50, second: 0, isOn: true)
     }
     
     

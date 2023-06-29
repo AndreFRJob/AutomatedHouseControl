@@ -38,7 +38,7 @@ class Som: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol? {
-        return Som(playlists: ["Chimarruts", "Nego do Borel", "Supla", "1berto", "Caitano"] ,selectedPlaylistIndex: 1, volume: 0.85, minVolume: 0.01, maxVolume: 1.00, isOn: true)
+        return Som(playlists: ["Chimarruts", "Nego do Borel", "Supla", "1berto", "Caitano"] ,selectedPlaylistIndex: 1, volume: 20, minVolume: 0, maxVolume: 100, isOn: true)
     }
     
 }

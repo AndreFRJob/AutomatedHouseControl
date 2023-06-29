@@ -36,6 +36,75 @@ class AHCMainViewModel {
     public var timerMinuteNumRows: Int = 60
     public var timerSecondsNumRows: Int = 60
     
+    public var minArCondTemperatureValue: Float {
+        guard let arCondicionado = arCondicionado else { return 0 }
+        return arCondicionado.minTemperature
+    }
+    public var maxArCondTemperatureValue: Float {
+        guard let arCondicionado = arCondicionado else { return 0 }
+        return arCondicionado.maxTemperatura
+    }
+    public var arCondTemperatureValue: Float {
+        guard let arCondicionado = arCondicionado else { return 0 }
+        return arCondicionado.temperature
+    }
+    
+    public var minAquecTemperatureValue: Float {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.minTemperature
+    }
+    public var maxAquecTemperatureValue: Float {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.maxTemperatura
+    }
+    public var aquecTemperatureValue: Float {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.temperature
+    }
+    
+    public var minSomVolumeValue: Float {
+        guard let som = som else { return 0 }
+        return som.minVolume
+    }
+    public var maxSomVolumeValue: Float {
+        guard let som = som else { return 0 }
+        return som.maxVolume
+    }
+    public var somVolumeValue: Float {
+        guard let som = som else { return 0 }
+        return som.volume
+    }
+    
+    public var minTVVolumeValue: Float {
+        guard let tv = tv else { return 0 }
+        return tv.minVolume
+    }
+    public var maxTVVolumeValue: Float {
+        guard let tv = tv else { return 0 }
+        return tv.maxVolume
+    }
+    public var tvVolumeValue: Float {
+        guard let tv = tv else { return 0 }
+        return tv.volume
+    }
+    
+    public var minLuzClarityValue: Float {
+        guard let luz = luz else { return 0 }
+        return luz.minClarity
+    }
+    public var maxLuzClarityValue: Float {
+        guard let luz = luz else { return 0 }
+        return luz.maxClarity
+    }
+    public var luzClarityValue: Float {
+        guard let luz = luz else { return 0 }
+        return luz.clarity
+    }
+    
+    
+    
+    
+    
     // MARK: Helpers
     func titleForTVChanelPicker(index: Int) -> String? {
         guard let minChannel = tv?.minChannel else {
@@ -101,6 +170,27 @@ class AHCMainViewModel {
     
     func didSelectSecondPicker(row: Int) {
         
+    }
+    
+//MARK: Sliders Values
+    func didSetTVVolume(value: Float) {
+        tv?.volume = value
+    }
+    
+    func didSetStereoVolume(value: Float) {
+        som?.volume = value
+    }
+    
+    func didSetArCondTemperature(value: Float) {
+        arCondicionado?.temperature = value
+    }
+    
+    func didSetHeaterTemperature(value: Float) {
+        aquecedor?.temperature = value
+    }
+    
+    func didSetLightClarity(value: Float) {
+        luz?.clarity = value
     }
     
     

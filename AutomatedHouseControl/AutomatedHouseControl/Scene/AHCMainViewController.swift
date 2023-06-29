@@ -74,6 +74,28 @@ class AHCMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        areaA1TVVolumeSlider.minimumValue = viewModel.minTVVolumeValue
+        areaA1TVVolumeSlider.maximumValue = viewModel.maxTVVolumeValue
+        
+        areaA2SomVolumeSlider.minimumValue = viewModel.minSomVolumeValue
+        areaA2SomVolumeSlider.maximumValue = viewModel.maxSomVolumeValue
+        
+        areaB1ArCondTemperatureSlider.minimumValue = viewModel.minArCondTemperatureValue
+        areaB1ArCondTemperatureSlider.maximumValue = viewModel.maxArCondTemperatureValue
+        
+        areaB2AquecedorTemperatureSlider.minimumValue = viewModel.minAquecTemperatureValue
+        areaB2AquecedorTemperatureSlider.maximumValue = viewModel.maxAquecTemperatureValue
+        
+        areaC1LuzClaritySlider.minimumValue = viewModel.minSomVolumeValue
+        areaC1LuzClaritySlider.maximumValue = viewModel.maxSomVolumeValue
+        
+        areaA1TVVolumeSlider.addTarget(self, action: #selector(sliderValueChange(_: )), for: .valueChanged)
+        areaA2SomVolumeSlider.addTarget(self, action: #selector(sliderValueChange(_: )), for: .valueChanged)
+        areaB1ArCondTemperatureSlider.addTarget(self, action: #selector(sliderValueChange(_: )), for: .valueChanged)
+        areaB2AquecedorTemperatureSlider.addTarget(self, action: #selector(sliderValueChange(_: )), for: .valueChanged)
+        areaC1LuzClaritySlider.addTarget(self, action: #selector(sliderValueChange(_: )), for: .valueChanged)
+        
         setupUI()
     }
 
@@ -102,6 +124,25 @@ class AHCMainViewController: UIViewController {
     @IBAction func areaC2AlrmSwitchChanged(_ sender: UISwitch) {
     }
     @IBAction func areaC2CamSwitchChanged(_ sender: UISwitch) {
+    }
+
+    
+    @objc func sliderValueChange(_ sender:UISlider) {
+        switch sender {
+        case areaA1TVVolumeSlider:
+            viewModel.didSetTVVolume(value: sender.value)
+        case areaA2SomVolumeSlider:
+            viewModel.didSetStereoVolume(value: sender.value)
+        case areaB1ArCondTemperatureSlider:
+            viewModel.didSetArCondTemperature(value: sender.value)
+            areaB1ArCondTemperatureQuantity.text = "\(Int(sender.value))"
+        case areaB2AquecedorTemperatureSlider:
+            viewModel.didSetHeaterTemperature(value: sender.value)
+            areaB2AquecedorTemperatureQuantity.text = "\(Int(sender.value))"
+        case areaC1LuzClaritySlider:
+            viewModel.didSetLightClarity(value: sender.value)
+        default: break
+        }
     }
     
 // MARK: Helpers

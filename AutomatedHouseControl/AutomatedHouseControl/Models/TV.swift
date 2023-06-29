@@ -41,6 +41,6 @@ class TV: EletronicsProtocol {
     
     static func mock() -> EletronicsProtocol? {
     
-        return TV(channel: 6 , minChannel: 1, maxChannel: 10, volume: 0.92, minVolume: 0.01, maxVolume: 1.00, isOn: true)
+        return TV(channel: 6 , minChannel: 1, maxChannel: 10, volume: 92, minVolume: 0, maxVolume: 100, isOn: true)
     }
 }
