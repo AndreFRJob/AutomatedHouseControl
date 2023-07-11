@@ -15,6 +15,7 @@ class AHCMainViewModel {
     private var arCondicionado: ArCondicionado? = ArCondicionado.mock() as? ArCondicionado
     private var aquecedor: Aquecedor? = Aquecedor.mock() as? Aquecedor
     private var luz: Luz? = Luz.mock() as? Luz
+    private var seg: Segurança? = Segurança.mock() as? Segurança
     
     public let oneComponetNumber: Int = 1
     public let timerComponentsNumber: Int = 3
@@ -44,9 +45,9 @@ class AHCMainViewModel {
         guard let arCondicionado = arCondicionado else { return 0 }
         return arCondicionado.maxTemperatura
     }
-    public var arCondTemperatureValue: Float {
-        guard let arCondicionado = arCondicionado else { return 0 }
-        return arCondicionado.temperature
+    public var arCondTemperatureValue: String {
+        guard let arCondicionado = arCondicionado else { return "" }
+        return String(arCondicionado.temperature)
     }
     
     public var minAquecTemperatureValue: Float {
@@ -57,9 +58,9 @@ class AHCMainViewModel {
         guard let aquecedor = aquecedor else { return 0 }
         return aquecedor.maxTemperatura
     }
-    public var aquecTemperatureValue: Float {
-        guard let aquecedor = aquecedor else { return 0 }
-        return aquecedor.temperature
+    public var aquecTemperatureValue: String {
+        guard let aquecedor = aquecedor else { return "" }
+        return String(aquecedor.temperature)
     }
     
     public var minSomVolumeValue: Float {
@@ -100,10 +101,93 @@ class AHCMainViewModel {
         guard let luz = luz else { return 0 }
         return luz.clarity
     }
+    public var tvIsOn: Bool {
+        guard let tv = tv else { return false }
+        return tv.isOn
+    }
+    public var stereoIsOn: Bool {
+        guard let som = som  else { return false }
+        return som.isOn
+    }
+    public var arCondIsOn: Bool {
+        guard let arCondicionado = arCondicionado  else { return false }
+        return arCondicionado.isOn
+    }
+    public var heaterIsOn: Bool {
+        guard let aquecedor = aquecedor  else { return false }
+        return aquecedor.isOn
+    }
+    public var lightIsOn: Bool {
+        guard let luz = luz  else { return false }
+        return luz.isOn
+    }
+    public var generalSegIsOn: Bool {
+        guard let seg = seg  else { return false }
+        return seg.isOn
+    }
+    public var alarmIsOn: Bool {
+        guard let seg = seg  else { return false }
+        return seg.alarmIsON
+    }
+    public var camAreOn: Bool {
+        guard let seg = seg  else { return false }
+        return seg.camerasAreOn
+    }
+    
+    public var initialTVVolume: Float {
+        guard let tv = tv else { return 0 }
+        return tv.volume
+    }
+    public var initialStereoVolume: Float {
+        guard let som = som else { return 0}
+        return som.volume
+    }
+    public var initialArCondTemperature: Float {
+        guard let arCondicionado = arCondicionado else { return 0 }
+        return arCondicionado.temperature
+    }
+    public var initialHeaterTemperature: Float {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.temperature
+    }
+    public var initialLightClarity: Float {
+        guard let luz = luz else { return 0}
+        return luz.clarity
+    }
+    
+    public var initialTVChannel: Int {
+        guard let tv = tv else { return 0 }
+        return tv.channel
+    }
+    
+    public var initialStereoPlaylist: Int {
+        guard let som = som else { return 0 }
+        return som.selectedPlaylistIndex
+    }
+    
+    public var initialArCondPower: Int {
+        guard let arCondicionado = arCondicionado else { return 0}
+        return arCondicionado.selectedPowerLevelIndex
+    }
+    
+    public var heaterTimmerHour: Int {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.hour
+    }
+    public var heaterTimmerMinute: Int {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.minute
+    }
+    public var heaterTimmerSecond: Int {
+        guard let aquecedor = aquecedor else { return 0 }
+        return aquecedor.second
+    }
     
     
     
     
+    //MARK: Reactors
+    var onModelUpdate: (() -> ())?
     
     // MARK: Helpers
     func titleForTVChanelPicker(index: Int) -> String? {
@@ -172,7 +256,7 @@ class AHCMainViewModel {
         
     }
     
-//MARK: Sliders Values
+    //MARK: Sliders Values
     func didSetTVVolume(value: Float) {
         tv?.volume = value
     }
@@ -183,15 +267,54 @@ class AHCMainViewModel {
     
     func didSetArCondTemperature(value: Float) {
         arCondicionado?.temperature = value
+        self.onModelUpdate?()
     }
     
     func didSetHeaterTemperature(value: Float) {
         aquecedor?.temperature = value
+        self.onModelUpdate?()
     }
     
     func didSetLightClarity(value: Float) {
         luz?.clarity = value
     }
     
+    //MARK: Switchs and Buttons
     
+    public func didSwitchTVTo(value: Bool) {
+        tv?.isOn = value
+    }
+    public func didSwitchStereoTo(value: Bool) {
+        som?.isOn = value
+    }
+    public func didSwitchArCondTo(value: Bool) {
+        arCondicionado?.isOn = value
+    }
+    public func didSwitchHeaterTo(value: Bool) {
+        aquecedor?.isOn = value
+    }
+    public func didSwitchLightTo(value: Bool) {
+        luz?.isOn = value
+    }
+    public func didSwitchGeneralSegTo(value: Bool) {
+        seg?.isOn = value
+    }
+    public func didSwitchAlarmSegTo(value: Bool) {
+            seg?.alarmIsON = value
+    }
+    public func didSwitchCamTo(value: Bool) {
+            seg?.camerasAreOn = value
+    }
 }
+
+
+    /*
+     areaA1TVOnOffSwitch
+     areaA2SomOnOffSwitch
+     areaB1ArCondOnOffSwitch
+     areaB2AquecedorOnOffSwitch
+     areaC1LuzOnOffSwitch
+     areaC2SegurancaGeneralOnOffSwitch
+     areaC2AlarmOnOffSwitch
+     areaC2CamerasOnOffSwitch
+     */
