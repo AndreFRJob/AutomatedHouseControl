@@ -19,10 +19,10 @@
 		CE2F5B4D29FC5386008D2DA9 /* AHCMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F5B4C29FC5386008D2DA9 /* AHCMainViewModel.swift */; };
 		CECED01F2A1E9A5D00497DB2 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED01E2A1E9A5D00497DB2 /* TV.swift */; };
 		CECED0222A1E9EFE00497DB2 /* EletronicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0212A1E9EFE00497DB2 /* EletronicsProtocol.swift */; };
-		CECED0242A2136F200497DB2 /* Som.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0232A2136F200497DB2 /* Som.swift */; };
-		CECED0262A21390F00497DB2 /* ArCondicionado.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0252A21390F00497DB2 /* ArCondicionado.swift */; };
-		CECED0282A213B6500497DB2 /* Aquecedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0272A213B6500497DB2 /* Aquecedor.swift */; };
-		CECED02A2A213E8000497DB2 /* Luz.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0292A213E8000497DB2 /* Luz.swift */; };
+		CECED0242A2136F200497DB2 /* Stereo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0232A2136F200497DB2 /* Stereo.swift */; };
+		CECED0262A21390F00497DB2 /* AirConditioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0252A21390F00497DB2 /* AirConditioning.swift */; };
+		CECED0282A213B6500497DB2 /* Heater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0272A213B6500497DB2 /* Heater.swift */; };
+		CECED02A2A213E8000497DB2 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED0292A213E8000497DB2 /* Light.swift */; };
 		CECED02C2A21400C00497DB2 /* Segurança.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECED02B2A21400C00497DB2 /* Segurança.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,10 +60,10 @@
 		CE2F5B4C29FC5386008D2DA9 /* AHCMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHCMainViewModel.swift; sourceTree = "<group>"; };
 		CECED01E2A1E9A5D00497DB2 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
 		CECED0212A1E9EFE00497DB2 /* EletronicsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EletronicsProtocol.swift; sourceTree = "<group>"; };
-		CECED0232A2136F200497DB2 /* Som.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Som.swift; sourceTree = "<group>"; };
-		CECED0252A21390F00497DB2 /* ArCondicionado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArCondicionado.swift; sourceTree = "<group>"; };
-		CECED0272A213B6500497DB2 /* Aquecedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aquecedor.swift; sourceTree = "<group>"; };
-		CECED0292A213E8000497DB2 /* Luz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luz.swift; sourceTree = "<group>"; };
+		CECED0232A2136F200497DB2 /* Stereo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stereo.swift; sourceTree = "<group>"; };
+		CECED0252A21390F00497DB2 /* AirConditioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirConditioning.swift; sourceTree = "<group>"; };
+		CECED0272A213B6500497DB2 /* Heater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heater.swift; sourceTree = "<group>"; };
+		CECED0292A213E8000497DB2 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		CECED02B2A21400C00497DB2 /* Segurança.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Segurança.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,13 +145,6 @@
 			path = AutomatedHouseControlUITests;
 			sourceTree = "<group>";
 		};
-		CE8857202A29F03B002A4BF8 /* Enuns */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enuns;
-			sourceTree = "<group>";
-		};
 		CECED01C2A1E993100497DB2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,12 +157,11 @@
 		CECED01D2A1E994F00497DB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE8857202A29F03B002A4BF8 /* Enuns */,
 				CECED01E2A1E9A5D00497DB2 /* TV.swift */,
-				CECED0232A2136F200497DB2 /* Som.swift */,
-				CECED0252A21390F00497DB2 /* ArCondicionado.swift */,
-				CECED0272A213B6500497DB2 /* Aquecedor.swift */,
-				CECED0292A213E8000497DB2 /* Luz.swift */,
+				CECED0232A2136F200497DB2 /* Stereo.swift */,
+				CECED0252A21390F00497DB2 /* AirConditioning.swift */,
+				CECED0272A213B6500497DB2 /* Heater.swift */,
+				CECED0292A213E8000497DB2 /* Light.swift */,
 				CECED02B2A21400C00497DB2 /* Segurança.swift */,
 			);
 			path = Models;
@@ -315,14 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2F5B2129F9AFF0008D2DA9 /* AHCMainViewController.swift in Sources */,
-				CECED0242A2136F200497DB2 /* Som.swift in Sources */,
+				CECED0242A2136F200497DB2 /* Stereo.swift in Sources */,
 				CECED0222A1E9EFE00497DB2 /* EletronicsProtocol.swift in Sources */,
 				CE2F5B1D29F9AFF0008D2DA9 /* AppDelegate.swift in Sources */,
-				CECED0262A21390F00497DB2 /* ArCondicionado.swift in Sources */,
-				CECED0282A213B6500497DB2 /* Aquecedor.swift in Sources */,
+				CECED0262A21390F00497DB2 /* AirConditioning.swift in Sources */,
+				CECED0282A213B6500497DB2 /* Heater.swift in Sources */,
 				CE2F5B4D29FC5386008D2DA9 /* AHCMainViewModel.swift in Sources */,
 				CECED02C2A21400C00497DB2 /* Segurança.swift in Sources */,
-				CECED02A2A213E8000497DB2 /* Luz.swift in Sources */,
+				CECED02A2A213E8000497DB2 /* Light.swift in Sources */,
 				CECED01F2A1E9A5D00497DB2 /* TV.swift in Sources */,
 				CE2F5B1F29F9AFF0008D2DA9 /* SceneDelegate.swift in Sources */,
 			);

@@ -226,7 +226,7 @@ class AHCMainViewController: UIViewController {
         areaB2AquecedorTimerChoosePickerView.selectRow(viewModel.heaterTimmerMinute, inComponent: heaterMinuteComponent, animated: true)
         areaB2AquecedorTimerChoosePickerView.selectRow(viewModel.heaterTimmerSecond, inComponent: heaterSecondComponent, animated: true)
     }
-    
+    A
     
 }
 

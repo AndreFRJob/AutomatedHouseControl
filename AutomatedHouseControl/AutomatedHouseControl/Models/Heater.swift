@@ -7,9 +7,7 @@
 
 import Foundation
 
-class Aquecedor: EletronicsProtocol {
-    
-    
+class Heater: EletronicsProtocol {
     var temperature: Float
     let minTemperature: Float
     let maxTemperatura: Float
@@ -18,7 +16,13 @@ class Aquecedor: EletronicsProtocol {
     var second: Int
     var isOn: Bool
     
-    init?(temperature: Float, minTemperature: Float, maxTemperatura: Float, hour: Int, minute: Int, second: Int, isOn: Bool) {
+    init?(temperature: Float,
+          minTemperature: Float,
+          maxTemperatura: Float,
+          hour: Int,
+          minute: Int,
+          second: Int,
+          isOn: Bool) {
         self.temperature = temperature
         self.minTemperature = minTemperature
         self.maxTemperatura = maxTemperatura
@@ -32,13 +36,13 @@ class Aquecedor: EletronicsProtocol {
         let isValidHour = hour >= 0 && hour <= 24
         let isValidMinute = minute >= 0 && minute <= 59
         let isValidSecond = second >= 0 && second <= 59
-        let isValidAquecerdor = (isValidTemperature) && (isValidTemperatureInterval) && (isValidHour) && (isValidMinute) && (isValidSecond)
+        let isValidHeater = isValidTemperature && isValidTemperatureInterval && isValidHour && isValidMinute && isValidSecond
         
-        guard isValidAquecerdor else { return nil }
+        guard isValidHeater else { return nil }
         
     }
     
     static func mock() -> EletronicsProtocol? {
-        return Aquecedor(temperature: 16, minTemperature: 16, maxTemperatura: 30, hour: 0, minute: 16, second: 1, isOn: true)
+        return Heater(temperature: 16, minTemperature: 16, maxTemperatura: 30, hour: 0, minute: 16, second: 1, isOn: true)
     }
 }
