@@ -45,28 +45,28 @@ class AHCMainViewController: UIViewController {
     @IBOutlet weak var b1AirCondPowerTitleLabel: UILabel!
     @IBOutlet weak var b1AirCondTemperatureChoosePowerPickerView: UIPickerView!
     
-    @IBOutlet weak var areaB2AquecedorTitleLabel: UILabel!
-    @IBOutlet weak var areaB2AquecedorOnOffSwitch: UISwitch!
-    @IBOutlet weak var areaB2AquecedorTemperatureTitleLabel: UILabel!
-    @IBOutlet weak var areaB2AquecedorTemperatureSlider: UISlider!
-    @IBOutlet weak var areaB2AquecedorTemperatureCMark: UILabel!
-    @IBOutlet weak var areaB2AquecedorTemperatureQuantity: UILabel!
-    @IBOutlet weak var areaB2AquecedorTimerTitleLabel: UILabel!
-    @IBOutlet weak var areaB2AquecedorTimerChoosePickerView: UIPickerView!
+    @IBOutlet weak var b2HeaterTitleLabel: UILabel!
+    @IBOutlet weak var b2HeaterOnOffSwitch: UISwitch!
+    @IBOutlet weak var b2HeaterTemperatureTitleLabel: UILabel!
+    @IBOutlet weak var b2HeaterTemperatureSlider: UISlider!
+    @IBOutlet weak var b2HeaterTemperatureCMarkLabel: UILabel!
+    @IBOutlet weak var b2HeaterTemperatureQuantityLabel: UILabel!
+    @IBOutlet weak var b2HeaterTimerTitleLabel: UILabel!
+    @IBOutlet weak var b2HeaterTimerChoosePickerView: UIPickerView!
     
-    @IBOutlet weak var areaC1LuzTitleLabel: UILabel!
-    @IBOutlet weak var areaC1LuzOnOffSwitch: UISwitch!
-    @IBOutlet weak var areaC1LuzClarityTitleLabel: UILabel!
-    @IBOutlet weak var areaC1LuzClaritySlider: UISlider!
-    @IBOutlet weak var areaC1LuzTimerTitleLabel: UILabel!
-    @IBOutlet weak var areaC1LuzTimerChoosePickerView: UIPickerView!
+    @IBOutlet weak var c1LightTitleLabel: UILabel!
+    @IBOutlet weak var c1LightOnOffSwitch: UISwitch!
+    @IBOutlet weak var c1LightLuminosityTitleLabel: UILabel!
+    @IBOutlet weak var c1LightLuminositySlider: UISlider!
+    @IBOutlet weak var c1LightTimerTitleLabel: UILabel!
+    @IBOutlet weak var c1LightTimerChoosePickerView: UIPickerView!
     
-    @IBOutlet weak var areaC2SegurancaTitleLabel: UILabel!
-    @IBOutlet weak var areaC2SegurancaGeneralOnOffSwitch: UISwitch!
-    @IBOutlet weak var areaC2AlarmTitleLabel: UILabel!
-    @IBOutlet weak var areaC2AlarmOnOffSwitch: UISwitch!
-    @IBOutlet weak var areaC2CamerasTitleLabel: UILabel!
-    @IBOutlet weak var areaC2CamerasOnOffSwitch: UISwitch!
+    @IBOutlet weak var c2SecurityTitleLabel: UILabel!
+    @IBOutlet weak var c2SecurityGeneralOnOffSwitch: UISwitch!
+    @IBOutlet weak var c2AlarmTitleLabel: UILabel!
+    @IBOutlet weak var c2AlarmOnOffSwitch: UISwitch!
+    @IBOutlet weak var c2CamerasTitleLabel: UILabel!
+    @IBOutlet weak var c2CamerasOnOffSwitch: UISwitch!
     
     @IBOutlet weak var baseboardTitleLabel: UILabel!
     @IBOutlet weak var generalFirstScreenTitleLabel: UILabel!
@@ -103,15 +103,15 @@ class AHCMainViewController: UIViewController {
             viewModel.didSwitchStereoTo(value: sender.isOn)
         case b1AirCondOnOffSwitch:
             viewModel.didSwitchArCondTo(value: sender.isOn)
-        case areaB2AquecedorOnOffSwitch:
+        case b2HeaterOnOffSwitch:
             viewModel.didSwitchHeaterTo(value: sender.isOn)
-        case areaC1LuzOnOffSwitch:
+        case c1LightOnOffSwitch:
             viewModel.didSwitchLightTo(value: sender.isOn)
-        case areaC2SegurancaGeneralOnOffSwitch:
+        case c2SecurityGeneralOnOffSwitch:
             viewModel.didSwitchGeneralSegTo(value: sender.isOn)
-        case areaC2AlarmOnOffSwitch:
+        case c2AlarmOnOffSwitch:
             viewModel.didSwitchAlarmSegTo(value: sender.isOn)
-        case areaC2CamerasOnOffSwitch:
+        case c2CamerasOnOffSwitch:
             viewModel.didSwitchCamTo(value: sender.isOn)
         default: break
         }
@@ -125,9 +125,9 @@ class AHCMainViewController: UIViewController {
             viewModel.didSetStereoVolume(value: sender.value)
         case b1AirCondTemperatureSlider:
             viewModel.didSetArCondTemperature(value: sender.value)
-        case areaB2AquecedorTemperatureSlider:
+        case b2HeaterTemperatureSlider:
             viewModel.didSetHeaterTemperature(value: sender.value)
-        case areaC1LuzClaritySlider:
+        case c1LightLuminositySlider:
             viewModel.didSetLightClarity(value: sender.value)
         default: break
         }
@@ -157,10 +157,10 @@ class AHCMainViewController: UIViewController {
         a2StereoChoosePlaylistPickerView.dataSource = self
         b1AirCondTemperatureChoosePowerPickerView.delegate = self
         b1AirCondTemperatureChoosePowerPickerView.dataSource = self
-        areaB2AquecedorTimerChoosePickerView.delegate = self
-        areaB2AquecedorTimerChoosePickerView.dataSource = self
-        areaC1LuzTimerChoosePickerView.delegate = self
-        areaC1LuzTimerChoosePickerView.dataSource = self
+        b2HeaterTimerChoosePickerView.delegate = self
+        b2HeaterTimerChoosePickerView.dataSource = self
+        c1LightTimerChoosePickerView.delegate = self
+        c1LightTimerChoosePickerView.dataSource = self
         
     }
     
@@ -168,11 +168,11 @@ class AHCMainViewController: UIViewController {
         a1TVOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
         a2StereoOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
         b1AirCondOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        areaB2AquecedorOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        areaC1LuzOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        areaC2SegurancaGeneralOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        areaC2AlarmOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        areaC2CamerasOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        b2HeaterOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        c1LightOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        c2SecurityGeneralOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        c2AlarmOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        c2CamerasOnOffSwitch.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
     }
     
     private func setupSliders() {
@@ -182,49 +182,49 @@ class AHCMainViewController: UIViewController {
         a2StereoVolumeSlider.maximumValue = viewModel.maxSomVolumeValue
         b1AirCondTemperatureSlider.minimumValue = viewModel.minArCondTemperatureValue
         b1AirCondTemperatureSlider.maximumValue = viewModel.maxArCondTemperatureValue
-        areaB2AquecedorTemperatureSlider.minimumValue = viewModel.minAquecTemperatureValue
-        areaB2AquecedorTemperatureSlider.maximumValue = viewModel.maxAquecTemperatureValue
-        areaC1LuzClaritySlider.minimumValue = viewModel.minSomVolumeValue
-        areaC1LuzClaritySlider.maximumValue = viewModel.maxSomVolumeValue
+        b2HeaterTemperatureSlider.minimumValue = viewModel.minAquecTemperatureValue
+        b2HeaterTemperatureSlider.maximumValue = viewModel.maxAquecTemperatureValue
+        c1LightLuminositySlider.minimumValue = viewModel.minSomVolumeValue
+        c1LightLuminositySlider.maximumValue = viewModel.maxSomVolumeValue
         
         a1TVVolumeSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
         a2StereoVolumeSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
         b1AirCondTemperatureSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
-        areaB2AquecedorTemperatureSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
-        areaC1LuzClaritySlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
+        b2HeaterTemperatureSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
+        c1LightLuminositySlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
     }
     
     private func updateSwitches() {
         a1TVOnOffSwitch.isOn = viewModel.tvIsOn
         a2StereoOnOffSwitch.isOn = viewModel.stereoIsOn
         b1AirCondOnOffSwitch.isOn = viewModel.arCondIsOn
-        areaB2AquecedorOnOffSwitch.isOn = viewModel.heaterIsOn
-        areaC1LuzOnOffSwitch.isOn = viewModel.lightIsOn
-        areaC2SegurancaGeneralOnOffSwitch.isOn = viewModel.generalSegIsOn
-        areaC2AlarmOnOffSwitch.isOn = viewModel.alarmIsOn
-        areaC2CamerasOnOffSwitch.isOn = viewModel.camAreOn
+        b2HeaterOnOffSwitch.isOn = viewModel.heaterIsOn
+        c1LightOnOffSwitch.isOn = viewModel.lightIsOn
+        c2SecurityGeneralOnOffSwitch.isOn = viewModel.generalSegIsOn
+        c2AlarmOnOffSwitch.isOn = viewModel.alarmIsOn
+        c2CamerasOnOffSwitch.isOn = viewModel.camAreOn
     }
     
     private func updateSliders() {
         a1TVVolumeSlider.value = viewModel.initialTVVolume
         a2StereoVolumeSlider.value = viewModel.initialStereoVolume
         b1AirCondTemperatureSlider.value = viewModel.initialArCondTemperature
-        areaB2AquecedorTemperatureSlider.value = viewModel.initialHeaterTemperature
-        areaC1LuzClaritySlider.value = viewModel.initialLightClarity
+        b2HeaterTemperatureSlider.value = viewModel.initialHeaterTemperature
+        c1LightLuminositySlider.value = viewModel.initialLightClarity
     }
     
     private func updateLabels() {
         b1AirCondTemperatureQuantityLabel.text = viewModel.arCondTemperatureValue
-        areaB2AquecedorTemperatureQuantity.text = viewModel.aquecTemperatureValue
+        b2HeaterTemperatureQuantityLabel.text = viewModel.aquecTemperatureValue
     }
     
     private func updatePickerViews() {
         a1TVChooseChanelPickerView.selectRow(viewModel.initialTVChannel, inComponent: 0, animated: true)
         a2StereoChoosePlaylistPickerView.selectRow(viewModel.initialStereoPlaylist, inComponent: 0, animated: true)
         b1AirCondTemperatureChoosePowerPickerView.selectRow(viewModel.initialArCondPower, inComponent: 0, animated: true)
-        areaB2AquecedorTimerChoosePickerView.selectRow(viewModel.heaterTimmerHour, inComponent: heaterHourComponent, animated: true)
-        areaB2AquecedorTimerChoosePickerView.selectRow(viewModel.heaterTimmerMinute, inComponent: heaterMinuteComponent, animated: true)
-        areaB2AquecedorTimerChoosePickerView.selectRow(viewModel.heaterTimmerSecond, inComponent: heaterSecondComponent, animated: true)
+        b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerHour, inComponent: heaterHourComponent, animated: true)
+        b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerMinute, inComponent: heaterMinuteComponent, animated: true)
+        b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerSecond, inComponent: heaterSecondComponent, animated: true)
     }
     A
     
@@ -234,7 +234,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         var numberOfComponents: Int = viewModel.oneComponetNumber
         
-        if(pickerView == areaC1LuzTimerChoosePickerView) {
+        if(pickerView == c1LightTimerChoosePickerView) {
             numberOfComponents = viewModel.timerComponentsNumber
         }
         
@@ -254,7 +254,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             numbersOfRows = viewModel.arCondPowerLevelNumRows
         }
         
-        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+        if(pickerView == b2HeaterTimerChoosePickerView) {
             switch component {
             case 0:
                 numbersOfRows = viewModel.timerHourNumRows
@@ -264,7 +264,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 numbersOfRows = viewModel.timerSecondsNumRows
             }
         }
-        if(pickerView == areaC1LuzTimerChoosePickerView) {
+        if(pickerView == c1LightTimerChoosePickerView) {
             switch component {
             case 0:
                 numbersOfRows = viewModel.timerHourNumRows
@@ -291,7 +291,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
         }
         
-        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+        if(pickerView == b2HeaterTimerChoosePickerView) {
             switch component {
             case 0:
                 rowTitle = viewModel.titleForHoursAquecedorTimerPicker(index: row)
@@ -301,7 +301,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 rowTitle = viewModel.titleForSecondsAquecedorTimerPicker(index: row)
             }
         }
-        if(pickerView == areaC1LuzTimerChoosePickerView) {
+        if(pickerView == c1LightTimerChoosePickerView) {
             switch component {
             case 0:
                 rowTitle = viewModel.titleForHoursLuzTimerPicker(index: row)
@@ -323,7 +323,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == a2StereoChoosePlaylistPickerView) {
             viewModel.didSelectPlaylistPicker(row: row)
         }
-        if(pickerView == areaB2AquecedorTimerChoosePickerView) {
+        if(pickerView == b2HeaterTimerChoosePickerView) {
             switch component {
             
             case 0:
@@ -334,7 +334,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 viewModel.didSelectSecondPicker(row: row)
             }
         }
-        if(pickerView == areaC1LuzTimerChoosePickerView) {
+        if(pickerView == c1LightTimerChoosePickerView) {
             switch component {
             
             case 0:

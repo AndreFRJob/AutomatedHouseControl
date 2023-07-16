@@ -721,26 +721,6 @@
                         <outlet property="a2StereoVolumeSlider" destination="cOc-jK-gMz" id="heS-ON-c25"/>
                         <outlet property="a2StereoVolumeTitleLabel" destination="w4W-5r-La7" id="jVT-FG-CGX"/>
                         <outlet property="allGeneralButton" destination="jhR-Et-T6H" id="AEv-Aq-HJG"/>
-                        <outlet property="areaB2AquecedorOnOffSwitch" destination="0cu-EL-ezn" id="KfS-fE-r7f"/>
-                        <outlet property="areaB2AquecedorTemperatureCMark" destination="lYF-a9-hQp" id="Ea5-Q7-Hej"/>
-                        <outlet property="areaB2AquecedorTemperatureQuantity" destination="8gK-Jl-fqm" id="e9Z-fX-piT"/>
-                        <outlet property="areaB2AquecedorTemperatureSlider" destination="4C4-5j-caV" id="eof-1m-7En"/>
-                        <outlet property="areaB2AquecedorTemperatureTitleLabel" destination="xHp-rh-Tkn" id="USp-JX-Edu"/>
-                        <outlet property="areaB2AquecedorTimerChoosePickerView" destination="2KV-Lm-wYq" id="3O4-1F-MXt"/>
-                        <outlet property="areaB2AquecedorTimerTitleLabel" destination="geQ-J4-rSq" id="MCw-ob-jx3"/>
-                        <outlet property="areaB2AquecedorTitleLabel" destination="jRY-dz-ZFg" id="6Q5-lz-6dY"/>
-                        <outlet property="areaC1LuzClaritySlider" destination="pjg-Zm-Dr7" id="9MH-DG-zaP"/>
-                        <outlet property="areaC1LuzClarityTitleLabel" destination="BSU-YG-R0F" id="2ny-Sv-xFS"/>
-                        <outlet property="areaC1LuzOnOffSwitch" destination="dTK-R6-eeg" id="Dcl-KK-Gcl"/>
-                        <outlet property="areaC1LuzTimerChoosePickerView" destination="17p-zN-BRg" id="R0S-z2-MOf"/>
-                        <outlet property="areaC1LuzTimerTitleLabel" destination="Ng9-In-ybO" id="M26-kl-dja"/>
-                        <outlet property="areaC1LuzTitleLabel" destination="Hcs-TE-lAM" id="7Gw-yN-e62"/>
-                        <outlet property="areaC2AlarmOnOffSwitch" destination="CPA-LC-5bj" id="Ucv-5i-Icg"/>
-                        <outlet property="areaC2AlarmTitleLabel" destination="Hrg-WC-heL" id="71Q-Se-Soz"/>
-                        <outlet property="areaC2CamerasOnOffSwitch" destination="Bp4-ej-m30" id="IN8-Lc-V7Z"/>
-                        <outlet property="areaC2CamerasTitleLabel" destination="Oad-Rf-j1h" id="gWq-MX-4JM"/>
-                        <outlet property="areaC2SegurancaGeneralOnOffSwitch" destination="FFe-9Z-SaC" id="PAC-IE-1zS"/>
-                        <outlet property="areaC2SegurancaTitleLabel" destination="Wsz-fi-6Ez" id="jvM-w0-7s8"/>
                         <outlet property="b1AirCondOnOffSwitch" destination="5Zz-Ng-Z4u" id="UNL-BU-YrQ"/>
                         <outlet property="b1AirCondPowerTitleLabel" destination="hIU-h6-Fvs" id="mE1-e5-usi"/>
                         <outlet property="b1AirCondTemperatureCMarkLabel" destination="03K-EG-PQn" id="Vow-uV-qa6"/>
@@ -749,7 +729,27 @@
                         <outlet property="b1AirCondTemperatureSlider" destination="L9O-f6-Spc" id="me5-d5-6qW"/>
                         <outlet property="b1AirCondTemperatureTitleLabel" destination="Bcy-IS-Ag0" id="cXf-eL-nzp"/>
                         <outlet property="b1AirCondTitleLabel" destination="tZT-Sz-Ll3" id="4Pu-vG-Xo2"/>
+                        <outlet property="b2HeaterOnOffSwitch" destination="0cu-EL-ezn" id="KfS-fE-r7f"/>
+                        <outlet property="b2HeaterTemperatureCMarkLabel" destination="lYF-a9-hQp" id="Ea5-Q7-Hej"/>
+                        <outlet property="b2HeaterTemperatureQuantityLabel" destination="8gK-Jl-fqm" id="e9Z-fX-piT"/>
+                        <outlet property="b2HeaterTemperatureSlider" destination="4C4-5j-caV" id="eof-1m-7En"/>
+                        <outlet property="b2HeaterTemperatureTitleLabel" destination="xHp-rh-Tkn" id="USp-JX-Edu"/>
+                        <outlet property="b2HeaterTimerChoosePickerView" destination="2KV-Lm-wYq" id="3O4-1F-MXt"/>
+                        <outlet property="b2HeaterTimerTitleLabel" destination="geQ-J4-rSq" id="MCw-ob-jx3"/>
+                        <outlet property="b2HeaterTitleLabel" destination="jRY-dz-ZFg" id="6Q5-lz-6dY"/>
                         <outlet property="baseboardTitleLabel" destination="Sdm-Ff-fys" id="Fdj-Sv-k5S"/>
+                        <outlet property="c1LightLuminositySlider" destination="pjg-Zm-Dr7" id="9MH-DG-zaP"/>
+                        <outlet property="c1LightLuminosityTitleLabel" destination="BSU-YG-R0F" id="2ny-Sv-xFS"/>
+                        <outlet property="c1LightOnOffSwitch" destination="dTK-R6-eeg" id="Dcl-KK-Gcl"/>
+                        <outlet property="c1LightTimerChoosePickerView" destination="17p-zN-BRg" id="R0S-z2-MOf"/>
+                        <outlet property="c1LightTimerTitleLabel" destination="Ng9-In-ybO" id="M26-kl-dja"/>
+                        <outlet property="c1LightTitleLabel" destination="Hcs-TE-lAM" id="7Gw-yN-e62"/>
+                        <outlet property="c2AlarmOnOffSwitch" destination="CPA-LC-5bj" id="Ucv-5i-Icg"/>
+                        <outlet property="c2AlarmTitleLabel" destination="Hrg-WC-heL" id="71Q-Se-Soz"/>
+                        <outlet property="c2CamerasOnOffSwitch" destination="Bp4-ej-m30" id="IN8-Lc-V7Z"/>
+                        <outlet property="c2CamerasTitleLabel" destination="Oad-Rf-j1h" id="gWq-MX-4JM"/>
+                        <outlet property="c2SecurityGeneralOnOffSwitch" destination="FFe-9Z-SaC" id="PAC-IE-1zS"/>
+                        <outlet property="c2SecurityTitleLabel" destination="Wsz-fi-6Ez" id="jvM-w0-7s8"/>
                         <outlet property="generalAButton" destination="TLm-U3-YcT" id="XqM-bP-75L"/>
                         <outlet property="generalATitleLabel" destination="rdt-no-deP" id="Y2a-Yh-Fio"/>
                         <outlet property="generalBButton" destination="35D-Kr-GP6" id="Jai-nO-9E2"/>
