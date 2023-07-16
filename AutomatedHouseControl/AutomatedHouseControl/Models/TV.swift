@@ -18,7 +18,13 @@ class TV: EletronicsProtocol {
     
     var isOn: Bool
     
-    init?(channel: Int, minChannel: Int, maxChannel: Int, volume: Float, minVolume: Float, maxVolume: Float, isOn: Bool) {
+    init?(channel: Int,
+          minChannel: Int,
+          maxChannel: Int,
+          volume: Float,
+          minVolume: Float,
+          maxVolume: Float,
+          isOn: Bool) {
         self.channel = channel
         self.minChannel = minChannel
         self.maxChannel = maxChannel
@@ -40,7 +46,12 @@ class TV: EletronicsProtocol {
     }
     
     static func mock() -> EletronicsProtocol? {
-    
-        return TV(channel: 6 , minChannel: 1, maxChannel: 10, volume: 92, minVolume: 0, maxVolume: 100, isOn: true)
+        return TV(channel: 6 ,
+                  minChannel: 1,
+                  maxChannel: 10,
+                  volume: 92,
+                  minVolume: 0,
+                  maxVolume: 100,
+                  isOn: true)
     }
 }
