@@ -84,14 +84,14 @@ class AHCMainViewController: UIViewController {
         setupUI()
     }
 
-    @IBAction func areaAGeneralButtonTapped(_ sender: UIButton) {
+    @IBAction func generalAButtonTapped(_ sender: UIButton) {
     }
     
-    @IBAction func areaBGeneralButtonTapped(_ sender: UIButton) {
+    @IBAction func generalBButtonTapped(_ sender: UIButton) {
     }
-    @IBAction func areaCGeneralButtonTapped(_ sender: Any) {
+    @IBAction func generalCButtonTapped(_ sender: Any) {
     }
-    @IBAction func generalButtonTapped(_ sender: Any) {
+    @IBAction func generalAllButtonTapped(_ sender: Any) {
     }
     
     
@@ -117,7 +117,7 @@ class AHCMainViewController: UIViewController {
         }
     }
     
-    @objc func sliderValueChanged(_ sender:UISlider) {
+    @objc func sliderValueChanged(_ sender: UISlider) {
         switch sender {
         case a1TVVolumeSlider:
             viewModel.didSetTVVolume(value: sender.value)
@@ -141,14 +141,13 @@ class AHCMainViewController: UIViewController {
         setupSliders()
         updateUI()
     }
+    
     private func updateUI() {
         updateSliders()
         updateSwitches()
         updateLabels()
         updatePickerViews()
     }
-    
-    
     
     private func setupPickerViews() {
         a1TVChooseChanelPickerView.delegate = self
@@ -161,7 +160,6 @@ class AHCMainViewController: UIViewController {
         b2HeaterTimerChoosePickerView.dataSource = self
         c1LightTimerChoosePickerView.delegate = self
         c1LightTimerChoosePickerView.dataSource = self
-        
     }
     
     private func setupSwitches() {
@@ -226,8 +224,6 @@ class AHCMainViewController: UIViewController {
         b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerMinute, inComponent: heaterMinuteComponent, animated: true)
         b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerSecond, inComponent: heaterSecondComponent, animated: true)
     }
-    A
-    
 }
 
 extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -237,7 +233,6 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == c1LightTimerChoosePickerView) {
             numberOfComponents = viewModel.timerComponentsNumber
         }
-        
         return numberOfComponents
     }
     
@@ -274,7 +269,6 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 numbersOfRows = viewModel.timerSecondsNumRows
             }
         }
-        
         return numbersOfRows
     }
     
@@ -311,7 +305,6 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 rowTitle = viewModel.titleForSecondsLuzTimerPicker(index: row)
             }
         }
-        
         return rowTitle
     }
     
@@ -345,7 +338,5 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 viewModel.didSelectSecondPicker(row: row)
             }
         }
-        
-        setupUI()
     }
 }

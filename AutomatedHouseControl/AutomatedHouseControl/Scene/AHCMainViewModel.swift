@@ -233,26 +233,27 @@ class AHCMainViewModel {
     func didSelectTVPicker(row: Int) {
         guard let minChannel = tv?.minChannel else { return }
         tv?.channel = row + minChannel
+        self.onModelUpdate?()
     }
     
     func didSelectPlaylistPicker(row: Int) {
-        
+        self.onModelUpdate?()
     }
     
     func didSelectTemperaturePicker(row: Int) {
-        
+        self.onModelUpdate?()
     }
     
     func didSelectHourPicker(row: Int) {
-        
+        self.onModelUpdate?()
     }
     
     func didSelectMinutePicker(row: Int) {
-        
+        self.onModelUpdate?()
     }
     
     func didSelectSecondPicker(row: Int) {
-        
+        self.onModelUpdate?()
     }
     
     //MARK: Sliders Values
