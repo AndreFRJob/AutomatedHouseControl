@@ -12,10 +12,10 @@ class AHCMainViewModel {
     // MARK: Atributes
     private var stereo: Stereo? = Stereo.mock() as? Stereo
     private var tv: TV? = TV.mock() as? TV
-    private var arCondicionado: AirConditioning? = AirConditioning.mock() as? AirConditioning
+    private var airConditioning: AirConditioning? = AirConditioning.mock() as? AirConditioning
     private var heater: Heater? = Heater.mock() as? Heater
-    private var luz: Light? = Light.mock() as? Light
-    private var seg: Security? = Security.mock() as? Security
+    private var light: Light? = Light.mock() as? Light
+    private var security: Security? = Security.mock() as? Security
     
     public let oneComponetNumber: Int = 1
     public let timerComponentsNumber: Int = 3
@@ -24,56 +24,56 @@ class AHCMainViewModel {
         guard let tv = tv else { return 0 }
         return tv.maxChannel - tv.minChannel + 1
     }
-    public var somPlaylistNumRows: Int {
-        guard let som = stereo else { return 0 }
-        return som.playlists.count
+    public var stereoPlaylistNumRows: Int {
+        guard let stereo = stereo else { return 0 }
+        return stereo.playlists.count
     }
-    public var arCondPowerLevelNumRows: Int {
-        guard let arCondicionado = arCondicionado else { return 0 }
-        return arCondicionado.powerLevels.count
+    public var airCondPowerLevelNumRows: Int {
+        guard let airConditioning = airConditioning else { return 0 }
+        return airConditioning.powerLevels.count
     }
     
     public var timerHourNumRows: Int = 25
     public var timerMinuteNumRows: Int = 60
     public var timerSecondsNumRows: Int = 60
     
-    public var minArCondTemperatureValue: Float {
-        guard let arCondicionado = arCondicionado else { return 0 }
-        return arCondicionado.minTemperature
+    public var minAirCondTemperatureValue: Float {
+        guard let airConditioning = airConditioning else { return 0 }
+        return airConditioning.minTemperature
     }
-    public var maxArCondTemperatureValue: Float {
-        guard let arCondicionado = arCondicionado else { return 0 }
-        return arCondicionado.maxTemperatura
+    public var maxAirCondTemperatureValue: Float {
+        guard let airConditioning = airConditioning else { return 0 }
+        return airConditioning.maxTemperatura
     }
-    public var arCondTemperatureValue: String {
-        guard let arCondicionado = arCondicionado else { return "" }
-        return String(arCondicionado.temperature)
-    }
-    
-    public var minAquecTemperatureValue: Float {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.minTemperature
-    }
-    public var maxAquecTemperatureValue: Float {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.maxTemperatura
-    }
-    public var aquecTemperatureValue: String {
-        guard let aquecedor = heater else { return "" }
-        return String(aquecedor.temperature)
+    public var airCondTemperatureValue: String {
+        guard let airConditioning = airConditioning else { return "" }
+        return String(airConditioning.temperature)
     }
     
-    public var minSomVolumeValue: Float {
-        guard let som = stereo else { return 0 }
-        return som.minVolume
+    public var minHeaterTemperatureValue: Float {
+        guard let heater = heater else { return 0 }
+        return heater.minTemperature
     }
-    public var maxSomVolumeValue: Float {
-        guard let som = stereo else { return 0 }
-        return som.maxVolume
+    public var maxHeaterTemperatureValue: Float {
+        guard let heater = heater else { return 0 }
+        return heater.maxTemperatura
     }
-    public var somVolumeValue: Float {
-        guard let som = stereo else { return 0 }
-        return som.volume
+    public var heaterTemperatureValue: String {
+        guard let heater = heater else { return "" }
+        return String(heater.temperature)
+    }
+    
+    public var minStereoVolumeValue: Float {
+        guard let stereo = stereo else { return 0 }
+        return stereo.minVolume
+    }
+    public var maxStereoVolumeValue: Float {
+        guard let stereo = stereo else { return 0 }
+        return stereo.maxVolume
+    }
+    public var stereoVolumeValue: Float {
+        guard let stereo = stereo else { return 0 }
+        return stereo.volume
     }
     
     public var minTVVolumeValue: Float {
@@ -89,49 +89,49 @@ class AHCMainViewModel {
         return tv.volume
     }
     
-    public var minLuzClarityValue: Float {
-        guard let luz = luz else { return 0 }
-        return luz.minLuminosity
+    public var minLightClarityValue: Float {
+        guard let light = light else { return 0 }
+        return light.minLuminosity
     }
-    public var maxLuzClarityValue: Float {
-        guard let luz = luz else { return 0 }
-        return luz.maxLuminosity
+    public var maxLightClarityValue: Float {
+        guard let light = light else { return 0 }
+        return light.maxLuminosity
     }
-    public var luzClarityValue: Float {
-        guard let luz = luz else { return 0 }
-        return luz.luminosity
+    public var lightLuminosityValue: Float {
+        guard let light = light else { return 0 }
+        return light.luminosity
     }
     public var tvIsOn: Bool {
         guard let tv = tv else { return false }
         return tv.isOn
     }
     public var stereoIsOn: Bool {
-        guard let som = stereo  else { return false }
-        return som.isOn
+        guard let stereo = stereo  else { return false }
+        return stereo.isOn
     }
-    public var arCondIsOn: Bool {
-        guard let arCondicionado = arCondicionado  else { return false }
-        return arCondicionado.isOn
+    public var airCondIsOn: Bool {
+        guard let airConditioning = airConditioning  else { return false }
+        return airConditioning.isOn
     }
     public var heaterIsOn: Bool {
-        guard let aquecedor = heater  else { return false }
-        return aquecedor.isOn
+        guard let heater = heater  else { return false }
+        return heater.isOn
     }
     public var lightIsOn: Bool {
-        guard let luz = luz  else { return false }
-        return luz.isOn
+        guard let light = light  else { return false }
+        return light.isOn
     }
-    public var generalSegIsOn: Bool {
-        guard let seg = seg  else { return false }
-        return seg.isOn
+    public var generalSecIsOn: Bool {
+        guard let security = security  else { return false }
+        return security.isOn
     }
     public var alarmIsOn: Bool {
-        guard let seg = seg  else { return false }
-        return seg.alarmIsON
+        guard let security = security  else { return false }
+        return security.alarmIsON
     }
     public var camAreOn: Bool {
-        guard let seg = seg  else { return false }
-        return seg.camerasAreOn
+        guard let security = security  else { return false }
+        return security.camerasAreOn
     }
     
     public var initialTVVolume: Float {
@@ -139,20 +139,20 @@ class AHCMainViewModel {
         return tv.volume
     }
     public var initialStereoVolume: Float {
-        guard let som = stereo else { return 0}
-        return som.volume
+        guard let stereo = stereo else { return 0}
+        return stereo.volume
     }
     public var initialArCondTemperature: Float {
-        guard let arCondicionado = arCondicionado else { return 0 }
-        return arCondicionado.temperature
+        guard let airConditioning = airConditioning else { return 0 }
+        return airConditioning.temperature
     }
     public var initialHeaterTemperature: Float {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.temperature
+        guard let heater = heater else { return 0 }
+        return heater.temperature
     }
     public var initialLightClarity: Float {
-        guard let luz = luz else { return 0}
-        return luz.luminosity
+        guard let light = light else { return 0}
+        return light.luminosity
     }
     
     public var initialTVChannel: Int {
@@ -161,34 +161,34 @@ class AHCMainViewModel {
     }
     
     public var initialStereoPlaylist: Int {
-        guard let som = stereo else { return 0 }
-        return som.selectedPlaylistIndex
+        guard let stereo = stereo else { return 0 }
+        return stereo.selectedPlaylistIndex
     }
     
-    public var initialArCondPower: Int {
-        guard let arCondicionado = arCondicionado else { return 0}
-        return arCondicionado.selectedPowerLevelIndex
+    public var initialAirCondPower: Int {
+        guard let airConditioning = airConditioning else { return 0}
+        return airConditioning.selectedPowerLevelIndex
     }
     
     public var heaterTimmerHour: Int {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.hour
+        guard let heater = heater else { return 0 }
+        return heater.hour
     }
     public var heaterTimmerMinute: Int {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.minute
+        guard let heater = heater else { return 0 }
+        return heater.minute
     }
     public var heaterTimmerSecond: Int {
-        guard let aquecedor = heater else { return 0 }
-        return aquecedor.second
+        guard let heater = heater else { return 0 }
+        return heater.second
     }
     
-    
-    
     //MARK: Reactors
+    
     var onModelUpdate: (() -> ())?
     
     // MARK: Helpers
+    
     func titleForTVChanelPicker(index: Int) -> String? {
         guard let minChannel = tv?.minChannel else {
             return "Canais nao encontrados"
@@ -196,37 +196,37 @@ class AHCMainViewModel {
         return String(index + minChannel)
     }
     
-    func titleForSomPlaylistPicker(index: Int) -> String? {
+    func titleForStereoPlaylistPicker(index: Int) -> String? {
         return stereo?.playlists[index]
         
     }
     
     func titleForTemperaturePowerPicker(index: Int) -> String? {
-        return arCondicionado?.powerLevels[index]
+        return airConditioning?.powerLevels[index]
     }
     
-    func titleForHoursAquecedorTimerPicker(index: Int) -> String? {
+    func titleForHeaterHoursTimerPicker(index: Int) -> String? {
         return String(index)
         
     }
     
-    func titleForMinutesAquecedorTimerPicker(index: Int) -> String? {
+    func titleForHeaterMinutesTimerPicker(index: Int) -> String? {
         return String(index)
     }
     
-    func titleForSecondsAquecedorTimerPicker(index: Int) -> String? {
+    func titleForHeaterSecondsTimerPicker(index: Int) -> String? {
         return String(index)
     }
     
-    func titleForHoursLuzTimerPicker(index: Int) -> String? {
+    func titleForLightHoursTimerPicker(index: Int) -> String? {
         return String(index)
     }
     
-    func titleForMinutesLuzTimerPicker(index: Int) -> String? {
+    func titleForLightMinutesTimerPicker(index: Int) -> String? {
         return String(index)
     }
     
-    func titleForSecondsLuzTimerPicker(index: Int) -> String? {
+    func titleForLightSecondsTimerPicker(index: Int) -> String? {
         return String(index)
     }
     
@@ -265,8 +265,8 @@ class AHCMainViewModel {
         stereo?.volume = value
     }
     
-    func didSetArCondTemperature(value: Float) {
-        arCondicionado?.temperature = value
+    func didSetAirCondTemperature(value: Float) {
+        airConditioning?.temperature = value
         self.onModelUpdate?()
     }
     
@@ -275,8 +275,8 @@ class AHCMainViewModel {
         self.onModelUpdate?()
     }
     
-    func didSetLightClarity(value: Float) {
-        luz?.luminosity = value
+    func didSetLightLuminosity(value: Float) {
+        light?.luminosity = value
     }
     
     //MARK: Switchs and Buttons
@@ -288,33 +288,21 @@ class AHCMainViewModel {
         stereo?.isOn = value
     }
     public func didSwitchArCondTo(value: Bool) {
-        arCondicionado?.isOn = value
+        airConditioning?.isOn = value
     }
     public func didSwitchHeaterTo(value: Bool) {
         heater?.isOn = value
     }
     public func didSwitchLightTo(value: Bool) {
-        luz?.isOn = value
+        light?.isOn = value
     }
     public func didSwitchGeneralSegTo(value: Bool) {
-        seg?.isOn = value
+        security?.isOn = value
     }
     public func didSwitchAlarmSegTo(value: Bool) {
-            seg?.alarmIsON = value
+            security?.alarmIsON = value
     }
     public func didSwitchCamTo(value: Bool) {
-            seg?.camerasAreOn = value
+            security?.camerasAreOn = value
     }
 }
-
-
-    /*
-     areaA1TVOnOffSwitch
-     areaA2SomOnOffSwitch
-     areaB1ArCondOnOffSwitch
-     areaB2AquecedorOnOffSwitch
-     areaC1LuzOnOffSwitch
-     areaC2SegurancaGeneralOnOffSwitch
-     areaC2AlarmOnOffSwitch
-     areaC2CamerasOnOffSwitch
-     */

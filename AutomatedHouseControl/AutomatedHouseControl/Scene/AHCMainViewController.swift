@@ -124,11 +124,11 @@ class AHCMainViewController: UIViewController {
         case a2StereoVolumeSlider:
             viewModel.didSetStereoVolume(value: sender.value)
         case b1AirCondTemperatureSlider:
-            viewModel.didSetArCondTemperature(value: sender.value)
+            viewModel.didSetAirCondTemperature(value: sender.value)
         case b2HeaterTemperatureSlider:
             viewModel.didSetHeaterTemperature(value: sender.value)
         case c1LightLuminositySlider:
-            viewModel.didSetLightClarity(value: sender.value)
+            viewModel.didSetLightLuminosity(value: sender.value)
         default: break
         }
     }
@@ -176,14 +176,14 @@ class AHCMainViewController: UIViewController {
     private func setupSliders() {
         a1TVVolumeSlider.minimumValue = viewModel.minTVVolumeValue
         a1TVVolumeSlider.maximumValue = viewModel.maxTVVolumeValue
-        a2StereoVolumeSlider.minimumValue = viewModel.minSomVolumeValue
-        a2StereoVolumeSlider.maximumValue = viewModel.maxSomVolumeValue
-        b1AirCondTemperatureSlider.minimumValue = viewModel.minArCondTemperatureValue
-        b1AirCondTemperatureSlider.maximumValue = viewModel.maxArCondTemperatureValue
-        b2HeaterTemperatureSlider.minimumValue = viewModel.minAquecTemperatureValue
-        b2HeaterTemperatureSlider.maximumValue = viewModel.maxAquecTemperatureValue
-        c1LightLuminositySlider.minimumValue = viewModel.minSomVolumeValue
-        c1LightLuminositySlider.maximumValue = viewModel.maxSomVolumeValue
+        a2StereoVolumeSlider.minimumValue = viewModel.minStereoVolumeValue
+        a2StereoVolumeSlider.maximumValue = viewModel.maxStereoVolumeValue
+        b1AirCondTemperatureSlider.minimumValue = viewModel.minAirCondTemperatureValue
+        b1AirCondTemperatureSlider.maximumValue = viewModel.maxAirCondTemperatureValue
+        b2HeaterTemperatureSlider.minimumValue = viewModel.minHeaterTemperatureValue
+        b2HeaterTemperatureSlider.maximumValue = viewModel.maxHeaterTemperatureValue
+        c1LightLuminositySlider.minimumValue = viewModel.minStereoVolumeValue
+        c1LightLuminositySlider.maximumValue = viewModel.maxStereoVolumeValue
         
         a1TVVolumeSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
         a2StereoVolumeSlider.addTarget(self, action: #selector(sliderValueChanged(_: )), for: .valueChanged)
@@ -195,10 +195,10 @@ class AHCMainViewController: UIViewController {
     private func updateSwitches() {
         a1TVOnOffSwitch.isOn = viewModel.tvIsOn
         a2StereoOnOffSwitch.isOn = viewModel.stereoIsOn
-        b1AirCondOnOffSwitch.isOn = viewModel.arCondIsOn
+        b1AirCondOnOffSwitch.isOn = viewModel.airCondIsOn
         b2HeaterOnOffSwitch.isOn = viewModel.heaterIsOn
         c1LightOnOffSwitch.isOn = viewModel.lightIsOn
-        c2SecurityGeneralOnOffSwitch.isOn = viewModel.generalSegIsOn
+        c2SecurityGeneralOnOffSwitch.isOn = viewModel.generalSecIsOn
         c2AlarmOnOffSwitch.isOn = viewModel.alarmIsOn
         c2CamerasOnOffSwitch.isOn = viewModel.camAreOn
     }
@@ -212,14 +212,14 @@ class AHCMainViewController: UIViewController {
     }
     
     private func updateLabels() {
-        b1AirCondTemperatureQuantityLabel.text = viewModel.arCondTemperatureValue
-        b2HeaterTemperatureQuantityLabel.text = viewModel.aquecTemperatureValue
+        b1AirCondTemperatureQuantityLabel.text = viewModel.airCondTemperatureValue
+        b2HeaterTemperatureQuantityLabel.text = viewModel.heaterTemperatureValue
     }
     
     private func updatePickerViews() {
         a1TVChooseChanelPickerView.selectRow(viewModel.initialTVChannel, inComponent: 0, animated: true)
         a2StereoChoosePlaylistPickerView.selectRow(viewModel.initialStereoPlaylist, inComponent: 0, animated: true)
-        b1AirCondTemperatureChoosePowerPickerView.selectRow(viewModel.initialArCondPower, inComponent: 0, animated: true)
+        b1AirCondTemperatureChoosePowerPickerView.selectRow(viewModel.initialAirCondPower, inComponent: 0, animated: true)
         b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerHour, inComponent: heaterHourComponent, animated: true)
         b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerMinute, inComponent: heaterMinuteComponent, animated: true)
         b2HeaterTimerChoosePickerView.selectRow(viewModel.heaterTimmerSecond, inComponent: heaterSecondComponent, animated: true)
@@ -243,10 +243,10 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             numbersOfRows = viewModel.tvChanelNumRows
         }
         if(pickerView == a2StereoChoosePlaylistPickerView) {
-            numbersOfRows = viewModel.somPlaylistNumRows
+            numbersOfRows = viewModel.stereoPlaylistNumRows
         }
         if(pickerView == b1AirCondTemperatureChoosePowerPickerView) {
-            numbersOfRows = viewModel.arCondPowerLevelNumRows
+            numbersOfRows = viewModel.airCondPowerLevelNumRows
         }
         
         if(pickerView == b2HeaterTimerChoosePickerView) {
@@ -279,7 +279,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             rowTitle = viewModel.titleForTVChanelPicker(index: row)
         }
         if(pickerView == a2StereoChoosePlaylistPickerView) {
-            rowTitle = viewModel.titleForSomPlaylistPicker(index: row)
+            rowTitle = viewModel.titleForStereoPlaylistPicker(index: row)
         }
         if(pickerView == b1AirCondTemperatureChoosePowerPickerView) {
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
@@ -288,21 +288,21 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         if(pickerView == b2HeaterTimerChoosePickerView) {
             switch component {
             case 0:
-                rowTitle = viewModel.titleForHoursAquecedorTimerPicker(index: row)
+                rowTitle = viewModel.titleForHeaterHoursTimerPicker(index: row)
             case 1:
-                rowTitle = viewModel.titleForMinutesAquecedorTimerPicker(index: row)
+                rowTitle = viewModel.titleForHeaterMinutesTimerPicker(index: row)
             default:
-                rowTitle = viewModel.titleForSecondsAquecedorTimerPicker(index: row)
+                rowTitle = viewModel.titleForHeaterSecondsTimerPicker(index: row)
             }
         }
         if(pickerView == c1LightTimerChoosePickerView) {
             switch component {
             case 0:
-                rowTitle = viewModel.titleForHoursLuzTimerPicker(index: row)
+                rowTitle = viewModel.titleForLightHoursTimerPicker(index: row)
             case 1:
-                rowTitle = viewModel.titleForMinutesLuzTimerPicker(index: row)
+                rowTitle = viewModel.titleForLightMinutesTimerPicker(index: row)
             default:
-                rowTitle = viewModel.titleForSecondsLuzTimerPicker(index: row)
+                rowTitle = viewModel.titleForLightSecondsTimerPicker(index: row)
             }
         }
         return rowTitle
