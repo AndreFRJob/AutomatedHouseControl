@@ -102,15 +102,15 @@ class AHCMainViewController: UIViewController {
         case a2StereoOnOffSwitch:
             viewModel.didSwitchStereoTo(value: sender.isOn)
         case b1AirCondOnOffSwitch:
-            viewModel.didSwitchArCondTo(value: sender.isOn)
+            viewModel.didSwitchAirCondTo(value: sender.isOn)
         case b2HeaterOnOffSwitch:
             viewModel.didSwitchHeaterTo(value: sender.isOn)
         case c1LightOnOffSwitch:
             viewModel.didSwitchLightTo(value: sender.isOn)
         case c2SecurityGeneralOnOffSwitch:
-            viewModel.didSwitchGeneralSegTo(value: sender.isOn)
+            viewModel.didSwitchGeneralSecTo(value: sender.isOn)
         case c2AlarmOnOffSwitch:
-            viewModel.didSwitchAlarmSegTo(value: sender.isOn)
+            viewModel.didSwitchAlarmSecTo(value: sender.isOn)
         case c2CamerasOnOffSwitch:
             viewModel.didSwitchCamTo(value: sender.isOn)
         default: break
@@ -206,7 +206,7 @@ class AHCMainViewController: UIViewController {
     private func updateSliders() {
         a1TVVolumeSlider.value = viewModel.initialTVVolume
         a2StereoVolumeSlider.value = viewModel.initialStereoVolume
-        b1AirCondTemperatureSlider.value = viewModel.initialArCondTemperature
+        b1AirCondTemperatureSlider.value = viewModel.initialAirCondTemperature
         b2HeaterTemperatureSlider.value = viewModel.initialHeaterTemperature
         c1LightLuminositySlider.value = viewModel.initialLightClarity
     }

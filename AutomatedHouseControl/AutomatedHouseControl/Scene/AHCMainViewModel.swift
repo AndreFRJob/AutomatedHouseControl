@@ -142,7 +142,7 @@ class AHCMainViewModel {
         guard let stereo = stereo else { return 0}
         return stereo.volume
     }
-    public var initialArCondTemperature: Float {
+    public var initialAirCondTemperature: Float {
         guard let airConditioning = airConditioning else { return 0 }
         return airConditioning.temperature
     }
@@ -198,7 +198,6 @@ class AHCMainViewModel {
     
     func titleForStereoPlaylistPicker(index: Int) -> String? {
         return stereo?.playlists[index]
-        
     }
     
     func titleForTemperaturePowerPicker(index: Int) -> String? {
@@ -207,7 +206,6 @@ class AHCMainViewModel {
     
     func titleForHeaterHoursTimerPicker(index: Int) -> String? {
         return String(index)
-        
     }
     
     func titleForHeaterMinutesTimerPicker(index: Int) -> String? {
@@ -279,7 +277,7 @@ class AHCMainViewModel {
         light?.luminosity = value
     }
     
-    //MARK: Switchs and Buttons
+    //MARK: Switches and Buttons
     
     public func didSwitchTVTo(value: Bool) {
         tv?.isOn = value
@@ -287,7 +285,7 @@ class AHCMainViewModel {
     public func didSwitchStereoTo(value: Bool) {
         stereo?.isOn = value
     }
-    public func didSwitchArCondTo(value: Bool) {
+    public func didSwitchAirCondTo(value: Bool) {
         airConditioning?.isOn = value
     }
     public func didSwitchHeaterTo(value: Bool) {
@@ -296,10 +294,10 @@ class AHCMainViewModel {
     public func didSwitchLightTo(value: Bool) {
         light?.isOn = value
     }
-    public func didSwitchGeneralSegTo(value: Bool) {
+    public func didSwitchGeneralSecTo(value: Bool) {
         security?.isOn = value
     }
-    public func didSwitchAlarmSegTo(value: Bool) {
+    public func didSwitchAlarmSecTo(value: Bool) {
             security?.alarmIsON = value
     }
     public func didSwitchCamTo(value: Bool) {
