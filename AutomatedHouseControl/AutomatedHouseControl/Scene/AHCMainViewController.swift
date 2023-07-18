@@ -238,85 +238,98 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         var numbersOfRows: Int = 0
-
-        if(pickerView == a1TVChooseChanelPickerView) {
-            numbersOfRows = viewModel.tvChanelNumRows
-        }
-        if(pickerView == a2StereoChoosePlaylistPickerView) {
-            numbersOfRows = viewModel.stereoPlaylistNumRows
-        }
-        if(pickerView == b1AirCondTemperatureChoosePowerPickerView) {
-            numbersOfRows = viewModel.airCondPowerLevelNumRows
-        }
         
-        if(pickerView == b2HeaterTimerChoosePickerView) {
+        switch pickerView {
+        case a1TVChooseChanelPickerView:
+            numbersOfRows = viewModel.tvChanelNumRows
+            return numbersOfRows
+        case a2StereoChoosePlaylistPickerView:
+            numbersOfRows = viewModel.stereoPlaylistNumRows
+            return numbersOfRows
+        case b1AirCondTemperatureChoosePowerPickerView:
+            numbersOfRows = viewModel.airCondPowerLevelNumRows
+            return numbersOfRows
+        case b2HeaterTimerChoosePickerView:
             switch component {
             case 0:
                 numbersOfRows = viewModel.timerHourNumRows
+                return numbersOfRows
             case 1:
                 numbersOfRows = viewModel.timerMinuteNumRows
+                return numbersOfRows
             default:
                 numbersOfRows = viewModel.timerSecondsNumRows
+                return numbersOfRows
             }
-        }
-        if(pickerView == c1LightTimerChoosePickerView) {
+        case c1LightTimerChoosePickerView:
             switch component {
             case 0:
                 numbersOfRows = viewModel.timerHourNumRows
+                return numbersOfRows
             case 1:
                 numbersOfRows = viewModel.timerMinuteNumRows
+                return numbersOfRows
             default:
                 numbersOfRows = viewModel.timerSecondsNumRows
+                return numbersOfRows
             }
+        default:
+            numbersOfRows = 0
+            return numbersOfRows
         }
-        return numbersOfRows
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var rowTitle: String?
         
-        if(pickerView == a1TVChooseChanelPickerView) {
+        switch pickerView {
+        case a1TVChooseChanelPickerView:
             rowTitle = viewModel.titleForTVChanelPicker(index: row)
-        }
-        if(pickerView == a2StereoChoosePlaylistPickerView) {
+            return rowTitle
+        case a2StereoChoosePlaylistPickerView:
             rowTitle = viewModel.titleForStereoPlaylistPicker(index: row)
-        }
-        if(pickerView == b1AirCondTemperatureChoosePowerPickerView) {
+            return rowTitle
+        case b1AirCondTemperatureChoosePowerPickerView:
             rowTitle = viewModel.titleForTemperaturePowerPicker(index: row)
-        }
-        
-        if(pickerView == b2HeaterTimerChoosePickerView) {
+            return rowTitle
+        case b2HeaterTimerChoosePickerView:
             switch component {
             case 0:
                 rowTitle = viewModel.titleForHeaterHoursTimerPicker(index: row)
+                return rowTitle
             case 1:
                 rowTitle = viewModel.titleForHeaterMinutesTimerPicker(index: row)
+                return rowTitle
             default:
                 rowTitle = viewModel.titleForHeaterSecondsTimerPicker(index: row)
+                return rowTitle
             }
-        }
-        if(pickerView == c1LightTimerChoosePickerView) {
+        case c1LightTimerChoosePickerView:
             switch component {
             case 0:
                 rowTitle = viewModel.titleForLightHoursTimerPicker(index: row)
+                return rowTitle
             case 1:
                 rowTitle = viewModel.titleForLightMinutesTimerPicker(index: row)
+                return rowTitle
             default:
                 rowTitle = viewModel.titleForLightSecondsTimerPicker(index: row)
+                return rowTitle
             }
+        default:
+            rowTitle = ""
+            return rowTitle
         }
-        return rowTitle
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if(pickerView == a1TVChooseChanelPickerView) {
+        switch pickerView {
+        case a1TVChooseChanelPickerView:
             viewModel.didSelectTVPicker(row: row)
-        }
-        if(pickerView == a2StereoChoosePlaylistPickerView) {
+        case a2StereoChoosePlaylistPickerView:
             viewModel.didSelectPlaylistPicker(row: row)
-        }
-        if(pickerView == b2HeaterTimerChoosePickerView) {
+        case b2HeaterTimerChoosePickerView:
             switch component {
             
             case 0:
@@ -326,8 +339,7 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             default:
                 viewModel.didSelectSecondPicker(row: row)
             }
-        }
-        if(pickerView == c1LightTimerChoosePickerView) {
+        case c1LightTimerChoosePickerView:
             switch component {
             
             case 0:
@@ -337,6 +349,8 @@ extension AHCMainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             default:
                 viewModel.didSelectSecondPicker(row: row)
             }
+        default:
+            viewModel.didSelectSecondPicker(row: 0)
         }
     }
 }
